@@ -4,95 +4,109 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Austin Family Reunion 2026 · Fresno, California</title>
-<meta name="description" content="The Austin Family Reunion — October 9–11, 2026 in Fresno, California." />
+<meta name="description" content="The Austin Family Reunion — October 9–11, 2026 in Fresno, California. Register, see the weekend schedule, hotel, and family history." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --burnt:#c55317;--burnt-dark:#9f4214;--brown:#2b1a0f;--brown-2:#3a2415;
-    --cream:#fdf6ea;--cream-2:#f4e6d0;--ink:#24160d;--ink-soft:#4d3a29;--line:#e0cfb4;--maxw:1120px;
+    --burnt:#c55317;
+    --burnt-dark:#9f4214;
+    --brown:#2b1a0f;
+    --brown-2:#3a2415;
+    --cream:#fdf6ea;
+    --cream-2:#f4e6d0;
+    --ink:#24160d;        /* AAA on cream */
+    --ink-soft:#4d3a29;
+    --line:#e0cfb4;
+    --maxw:1120px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--cream);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Source Sans 3",system-ui,sans-serif;
+    font-size:19px;
+    line-height:1.6;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
   .display{font-family:"Playfair Display",Georgia,serif}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   img{max-width:100%;display:block}
+
   a{color:var(--burnt-dark)}
   main p a,footer a{color:var(--burnt-dark);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px;font-weight:600}
+  main p a:visited{color:#7a2f12}
   a:focus-visible,button:focus-visible{outline:3px solid var(--burnt);outline-offset:3px;border-radius:6px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:16px 34px;font-size:19px;font-weight:700;background:var(--burnt);color:#fff;text-decoration:none;border:2px solid var(--burnt);border-radius:10px;cursor:pointer}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:16px 34px;
+    font-size:19px;font-weight:700;letter-spacing:.02em;background:var(--burnt);color:#fff;text-decoration:none;
+    border:2px solid var(--burnt);border-radius:10px;cursor:pointer}
   .btn:hover{background:var(--burnt-dark);border-color:var(--burnt-dark)}
   .btn.ghost{background:transparent;color:#fff;border-color:#fff}
   .btn.ghost:hover{background:rgba(255,255,255,.16)}
 
-  /* nav */
+  /* ---------- nav ---------- */
   header.site{position:sticky;top:0;z-index:40;background:var(--brown);color:#fff;border-bottom:3px solid var(--burnt)}
   .nav-in{max-width:var(--maxw);margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
   .brand img{width:42px;height:42px}
-  .brand b{font-family:"Playfair Display",serif;font-size:21px;font-weight:600}
+  .brand b{font-family:"Playfair Display",serif;font-size:21px;font-weight:600;line-height:1.05}
   nav.main{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   nav.main a{text-decoration:none;color:#f3e7d6;font-weight:600;font-size:18px;padding:10px 14px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center}
   nav.main a:hover{background:var(--brown-2);color:#fff}
   nav.main a.rsvp{background:var(--burnt);color:#fff}
   nav.main a.rsvp:hover{background:var(--burnt-dark)}
 
-  /* ---------- WebGL parallax hero ---------- */
-  .hero{position:relative;min-height:96vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:#1c130b}
-  #gl{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
-  .hero-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;z-index:0}
-  .hero-scrim{position:absolute;inset:0;z-index:1;background:
-      radial-gradient(120% 90% at 50% 55%, rgba(28,19,11,.30), rgba(28,19,11,.78) 80%),
-      linear-gradient(0deg, rgba(28,19,11,.7), rgba(28,19,11,.15) 45%, rgba(28,19,11,.45))}
-  .hero-in{position:relative;z-index:2;max-width:900px;padding:90px 24px}
-  .hero .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:17px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#f0b98a;margin-bottom:18px}
-  .hero .eyebrow::before,.hero .eyebrow::after{content:"";width:36px;height:2px;background:var(--burnt)}
-  .hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(44px,8vw,90px);line-height:1.0;letter-spacing:-.01em;text-shadow:0 3px 22px rgba(0,0,0,.55)}
+  /* ---------- hero ---------- */
+  .hero{position:relative;color:#fff;background:#1c130b}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right}
+  .hero-scrim{position:absolute;inset:0;background:
+      linear-gradient(90deg, rgba(28,19,11,.92) 0%, rgba(28,19,11,.82) 38%, rgba(28,19,11,.30) 70%, rgba(28,19,11,.15) 100%),
+      linear-gradient(0deg, rgba(28,19,11,.55), rgba(28,19,11,0) 40%)}
+  .hero-in{position:relative;max-width:var(--maxw);margin:0 auto;padding:78px 24px 70px}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:17px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#f0b98a;margin-bottom:22px}
+  .hero .eyebrow::before{content:"";width:40px;height:2px;background:var(--burnt)}
+  .hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(44px,7.5vw,84px);line-height:1.0;letter-spacing:-.01em;text-shadow:0 2px 18px rgba(0,0,0,.4)}
   .hero h1 .o{color:#f08a4a;display:block}
-  .hero .where{font-size:clamp(19px,2.6vw,24px);font-weight:600;color:#f3e7d6;margin:18px 0 4px;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+  .hero .lead{max-width:34ch;margin:22px 0 8px;font-size:21px;color:#f3e7d6;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+  .hero .when{font-family:"Playfair Display",serif;font-size:clamp(22px,3.2vw,30px);font-weight:600;margin-top:14px;color:#fff}
+  .hero .where{font-size:20px;font-weight:600;color:#f3e7d6;margin-bottom:26px}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .countdown{display:flex;gap:12px;flex-wrap:wrap}
+  .cd{min-width:92px;background:rgba(43,26,15,.7);border:1px solid rgba(240,138,74,.4);border-radius:12px;padding:14px 16px;backdrop-filter:blur(2px)}
+  .cd b{font-family:"Playfair Display",serif;font-weight:700;font-size:36px;line-height:1;display:block;color:#fff}
+  .cd span{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#e9c9a8;margin-top:6px;display:block}
 
-  /* big realtime countdown — front & center */
-  .count{margin:30px auto 30px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .count .u{min-width:120px;background:rgba(28,16,8,.55);border:1.5px solid rgba(240,138,74,.5);border-radius:16px;padding:20px 18px;backdrop-filter:blur(3px)}
-  .count .u b{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(40px,7vw,68px);line-height:1;display:block;color:#fff;font-variant-numeric:tabular-nums;text-shadow:0 2px 16px rgba(0,0,0,.5)}
-  .count .u span{font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f0c79f;margin-top:10px;display:block}
-  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-  @media(max-width:560px){.count .u{min-width:70px;padding:14px 10px}}
-
-  /* scroll hint */
-  .scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;color:#f0c79f;font-size:14px;letter-spacing:.16em;text-transform:uppercase}
-
-  /* feature strip */
-  .features{background:var(--brown);color:#fff;position:relative;z-index:3}
+  /* ---------- feature strip ---------- */
+  .features{background:var(--brown);color:#fff}
   .features .grid{max-width:var(--maxw);margin:0 auto;padding:34px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
   .feat{text-align:center;padding:14px 20px;border-right:1px solid rgba(255,255,255,.12)}
   .feat:last-child{border-right:none}
   .feat .ic{width:46px;height:46px;margin:0 auto 12px}
-  .feat h3{font-size:17px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+  .feat h3{font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:6px}
   .feat p{font-size:16px;color:#e6d3bd;max-width:22ch;margin:0 auto}
   @media(max-width:820px){.features .grid{grid-template-columns:1fr 1fr}.feat:nth-child(2){border-right:none}}
   @media(max-width:480px){.features .grid{grid-template-columns:1fr}.feat{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}.feat:last-child{border-bottom:none}}
 
-  section{padding:64px 0;border-top:1px solid var(--line);position:relative;z-index:3;background:var(--cream)}
+  /* ---------- sections ---------- */
+  section{padding:64px 0;border-top:1px solid var(--line)}
   .features,.hero{border-top:none}
   h2{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(30px,4.8vw,48px);line-height:1.08;margin-bottom:10px}
   h2 .o{color:var(--burnt)}
   .sub{font-size:20px;color:var(--ink-soft);margin-bottom:34px;max-width:62ch}
+
   .split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
   .split img{width:100%;border-radius:16px;box-shadow:0 16px 40px rgba(43,26,15,.22);border:5px solid #fff}
   @media(max-width:760px){.split{grid-template-columns:1fr;gap:24px}}
 
-  /* parallax mid-page banner (CSS, subtle) */
-  .pbanner{height:340px;background-image:url('assets/family-photo-2.png');background-size:cover;background-position:center;background-attachment:fixed;position:relative;border-top:none}
-  .pbanner .ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,19,11,.6),rgba(28,19,11,.5));display:flex;align-items:center;justify-content:center;text-align:center}
-  .pbanner .ov p{color:#fff;font-family:"Playfair Display",serif;font-size:clamp(26px,4vw,42px);font-weight:600;max-width:24ch;text-shadow:0 2px 18px rgba(0,0,0,.5);padding:0 20px}
-
+  /* pricing */
   .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .pcard{background:#fff;border:2px solid var(--line);border-radius:16px;padding:28px 22px;text-align:center}
   .pcard .tier{font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--burnt);min-height:46px;display:flex;align-items:center;justify-content:center}
-  .pcard .amt{font-family:"Playfair Display",serif;font-weight:700;font-size:50px;line-height:1;margin:6px 0 12px}
+  .pcard .amt{font-family:"Playfair Display",serif;font-weight:700;font-size:50px;line-height:1;margin:6px 0 12px;color:var(--ink)}
   .pcard .amt sup{font-size:22px;top:-.6em;color:var(--ink-soft)}
   .pcard .note{font-size:16px;color:var(--ink-soft)}
   .pcard.free{background:var(--brown);border-color:var(--brown)}
@@ -100,6 +114,7 @@
   @media(max-width:860px){.price-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:480px){.price-grid{grid-template-columns:1fr}}
 
+  /* schedule */
   .day{background:#fff;border:2px solid var(--line);border-radius:16px;padding:28px;margin-bottom:18px}
   .day .when-tag{font-size:17px;font-weight:700;color:var(--burnt);text-transform:uppercase;letter-spacing:.04em}
   .day h3{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(23px,3.2vw,30px);color:var(--brown);margin:6px 0 12px}
@@ -107,10 +122,11 @@
   .day ul{margin:14px 0 0;padding-left:0;list-style:none}
   .day li{font-size:18px;padding:7px 0 7px 28px;position:relative}
   .day li::before{content:"●";color:var(--burnt);position:absolute;left:4px;top:7px;font-size:13px}
-  .sched-photos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .sched-photos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
   .sched-photos img{width:100%;border-radius:14px;border:5px solid #fff;box-shadow:0 12px 30px rgba(43,26,15,.18)}
   @media(max-width:560px){.sched-photos{grid-template-columns:1fr}}
 
+  /* stay */
   .stay{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:16px;padding:32px}
   .stay h3{font-family:"Playfair Display",serif;font-size:28px;font-weight:600;margin-bottom:10px}
   .stay p{font-size:19px;color:var(--ink-soft);margin-bottom:10px}
@@ -118,9 +134,11 @@
   .stay .hotel-card .h{font-family:"Playfair Display",serif;font-size:23px;font-weight:600;color:var(--brown)}
   @media(max-width:760px){.stay{grid-template-columns:1fr}}
 
+  /* committee */
   .people{display:flex;flex-wrap:wrap;gap:12px}
   .people span{background:#fff;border:2px solid var(--line);border-radius:100px;padding:12px 22px;font-size:18px;font-weight:600}
 
+  /* history + gallery */
   .history{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
   .yr{background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px 22px;min-width:140px}
   .yr b{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;color:var(--burnt-dark);display:block}
@@ -133,66 +151,79 @@
   .gallery figcaption{text-align:center;font-family:"Playfair Display",serif;font-size:17px;color:var(--ink-soft);margin-top:10px}
   @media(max-width:680px){.gallery{grid-template-columns:1fr}.gallery figure{transform:none!important}}
 
+  /* register */
   .register{background:var(--brown);border:none;color:#fff;text-align:center}
   .register h2{color:#fff}
   .register p{font-size:21px;color:#e6d3bd;max-width:52ch;margin:0 auto 30px}
 
+  /* footer */
   footer{background:#1c130b;color:#e6d3bd;padding:48px 0;text-align:center}
   footer img{width:52px;height:52px;margin:0 auto 14px}
   footer .fn{font-family:"Playfair Display",serif;font-size:24px;font-weight:600;color:#fff}
   footer .fd{font-size:18px;margin-top:8px;color:#cdb89c}
   footer a{color:#f0b98a}
-
-  /* accessibility: respect reduced motion — kill parallax */
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto}
-    .pbanner{background-attachment:scroll}
-  }
+  @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <header class="site">
   <div class="nav-in">
-    <a class="brand" href="#top"><img src="assets/tree-logo.png" alt="Austin family tree crest" /><b>Austin Family Reunion</b></a>
+    <a class="brand" href="#top">
+      <img src="assets/tree-logo.png" alt="Austin family tree crest" />
+      <b>Austin Family Reunion</b>
+    </a>
     <nav class="main" aria-label="Main">
-      <a href="#schedule">Weekend</a><a href="#stay">Hotel</a><a href="#history">History</a>
+      <a href="#schedule">Weekend</a>
+      <a href="#stay">Hotel</a>
+      <a href="#history">History</a>
       <a href="#register" class="rsvp">Register</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-  <!-- WEBGL PARALLAX HERO -->
+  <!-- HERO -->
   <section class="hero">
-    <canvas id="gl"></canvas>
-    <img class="hero-fallback" id="heroFallback" src="assets/austin.png" alt="A family walking together toward a great oak tree at sunset" style="display:none" />
+    <img class="hero-img" src="assets/austin.png" alt="A family walking together toward a great oak tree at sunset" />
     <div class="hero-scrim"></div>
     <div class="hero-in">
       <span class="eyebrow">2026 Family Reunion</span>
       <h1>Stronger Roots.<span class="o">Stronger Family.</span></h1>
-      <p class="where">Fresno, California · October 9 – 11, 2026</p>
-      <div class="count" id="count" aria-label="Countdown to the reunion">
-        <div class="u"><b data-d>00</b><span>Days</span></div>
-        <div class="u"><b data-h>00</b><span>Hours</span></div>
-        <div class="u"><b data-m>00</b><span>Minutes</span></div>
-        <div class="u"><b data-s>00</b><span>Seconds</span></div>
-      </div>
+      <p class="lead">Celebrating our past. Cherishing our present. Building our future — together as one family.</p>
+      <p class="when">October 9 – 11, 2026</p>
+      <p class="where">Fresno, California</p>
       <div class="cta-row">
         <a class="btn" href="#register">Register Today</a>
         <a class="btn ghost" href="#schedule">See the Weekend</a>
       </div>
+      <div class="countdown" id="cd" aria-label="Countdown to the reunion">
+        <div class="cd"><b data-d>—</b><span>Days</span></div>
+        <div class="cd"><b data-h>—</b><span>Hours</span></div>
+        <div class="cd"><b data-m>—</b><span>Minutes</span></div>
+      </div>
     </div>
-    <div class="scroll-hint" aria-hidden="true">▾ Scroll</div>
   </section>
 
   <!-- FEATURE STRIP -->
   <section class="features" aria-label="Why we gather">
     <div class="grid">
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M16 7a4 4 0 1 0-8 0M3 21v-1a5 5 0 0 1 5-5M21 21v-1a5 5 0 0 0-5-5M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg><h3>Reconnect</h3><p>See family near and far.</p></div>
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M5 13l2 7h10l2-7M8 9l4-3 4 3M3 13h18"/></svg><h3>Celebrate</h3><p>Food, games & joy for all ages.</p></div>
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10Z"/></svg><h3>Honor</h3><p>Our elders and ancestors.</p></div>
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M12 3C7 8 7 13 12 21 17 13 17 8 12 3ZM12 8v13"/></svg><h3>Gather</h3><p>Three days, one family.</p></div>
+      <div class="feat">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M16 7a4 4 0 1 0-8 0M3 21v-1a5 5 0 0 1 5-5h0M21 21v-1a5 5 0 0 0-5-5h0M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+        <h3>Reconnect</h3><p>See family near and far.</p>
+      </div>
+      <div class="feat">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M5 13l2 7h10l2-7M12 3v6M8 9l4-3 4 3M3 13h18"/></svg>
+        <h3>Celebrate</h3><p>Food, games & joy for all ages.</p>
+      </div>
+      <div class="feat">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10Z"/></svg>
+        <h3>Honor</h3><p>Our elders and ancestors.</p>
+      </div>
+      <div class="feat">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M12 3C7 8 7 13 12 21 17 13 17 8 12 3ZM12 8v13"/></svg>
+        <h3>Gather</h3><p>Three days, one family.</p>
+      </div>
     </div>
   </section>
 
@@ -201,15 +232,16 @@
     <div class="wrap split">
       <div>
         <h2>Greetings, <span class="o">Family</span></h2>
-        <p class="sub" style="font-size:21px;max-width:60ch">We are so glad you're here. After Houston in 2024, the Austin family gathers again in 2026 — this time in Fresno, California. This page has everything you need: how to register, the weekend schedule, where to stay, and a look back at the reunions that built us. We can't wait to see you.</p>
+        <p class="sub" style="font-size:21px;max-width:60ch">
+          We are so glad you're here. After Houston in 2024, the Austin family gathers again in 2026 — this
+          time in Fresno, California. This page has everything you need: how to register, the weekend
+          schedule, where to stay, and a look back at the reunions that built us. We can't wait to see you.
+        </p>
         <a class="btn" href="#register">Register Today</a>
       </div>
       <img src="assets/welcome-austin-2026.png" alt="Welcome to Fresno — Austin Family Reunion 2026" />
     </div>
   </section>
-
-  <!-- PARALLAX BANNER -->
-  <section class="pbanner" aria-hidden="false"><div class="ov"><p>Celebrating our past. Building our future — together.</p></div></section>
 
   <!-- REGISTRATION -->
   <section id="register-info">
@@ -230,21 +262,29 @@
     <div class="wrap">
       <h2>The Weekend</h2>
       <p class="sub">Three days in Fresno — here's the plan.</p>
+
       <div class="day">
         <div class="when-tag">Friday, October 9 · Evening</div>
         <h3>Family Meet &amp; Greet</h3>
         <p>Join us Friday evening for our Family Meet &amp; Greet. We're finalizing the details and have a few exciting options to be announced as we get closer to the event.</p>
       </div>
+
       <div class="day">
         <div class="when-tag">Saturday, October 10 · All Day</div>
         <h3>Family Fun Day at Blackbeard's</h3>
         <p>Start your morning with breakfast at your hotel, then relax or explore Fresno. In the afternoon, the festivities begin at Blackbeard's Family Entertainment Center — food, games, and activities for all ages. Lunch is catered and included. Children 12 and under receive a ride wristband at no extra cost; additional wristbands for ages 13+ may be purchased for $40.</p>
-        <ul><li>Family group photos</li><li>Games for kids, teens, and adults</li><li>Music and dancing</li><li>A vote for the 2028 reunion location</li></ul>
-        <div class="sched-photos">
+        <ul>
+          <li>Family group photos</li>
+          <li>Games for kids, teens, and adults</li>
+          <li>Music and dancing</li>
+          <li>A vote for the 2028 reunion location</li>
+        </ul>
+        <div class="sched-photos" style="margin-top:18px">
           <img src="assets/family-photo-2.png" alt="The family sharing a meal together outdoors at golden hour" />
           <img src="assets/family-photo-3.png" alt="Children running and playing in a field at sunset" />
         </div>
       </div>
+
       <div class="day">
         <div class="when-tag">Sunday, October 11 · Morning</div>
         <h3>Madera Cemetery Tribute</h3>
@@ -264,7 +304,11 @@
           <p>Book within the Austin Family Reunion room block to receive our group rate and stay near the weekend's activities. Call the hotel and mention the <strong>Austin Family Reunion</strong> group rate, or use the reservation link.</p>
           <p style="margin-top:18px"><a class="btn" href="https://group.hiltongardeninn.com/fyitn6" target="_blank" rel="noopener">Reserve Your Room</a></p>
         </div>
-        <div class="hotel-card"><div class="h">Hilton Garden Inn</div><p style="margin:10px 0 0">Fresno, California</p><p style="margin:4px 0 0;font-size:17px">Group rate · Austin Family Reunion</p></div>
+        <div class="hotel-card">
+          <div class="h">Hilton Garden Inn</div>
+          <p style="margin:10px 0 0">Fresno, California</p>
+          <p style="margin:4px 0 0;font-size:17px">Group rate · Austin Family Reunion</p>
+        </div>
       </div>
     </div>
   </section>
@@ -274,11 +318,15 @@
     <div class="wrap">
       <h2>Reunion Committee</h2>
       <p class="sub">The family members working hard to bring us all together. Thank you.</p>
-      <div class="people"><span>Darrell Newsome</span><span>Yvonne Sherii Lee-Long</span><span>Leshea Tarver</span><span>Kamilah White</span><span>Lamarr Norris</span><span>Bianca Jenkins</span><span>Connie Breazell</span><span>La Shan Harris</span></div>
+      <div class="people">
+        <span>Darrell Newsome</span><span>Yvonne Sherii Lee-Long</span><span>Leshea Tarver</span>
+        <span>Kamilah White</span><span>Lamarr Norris</span><span>Bianca Jenkins</span>
+        <span>Connie Breazell</span><span>La Shan Harris</span>
+      </div>
     </div>
   </section>
 
-  <!-- HISTORY -->
+  <!-- HISTORY + GALLERY -->
   <section id="history">
     <div class="wrap">
       <h2>Reunions Through the <span class="o">Years</span></h2>
@@ -296,7 +344,9 @@
         <figure><img src="assets/family-photo-2.png" alt="Family dinner outdoors" /><figcaption>Breaking Bread</figcaption></figure>
         <figure><img src="assets/family-photo-3.png" alt="Children playing at sunset" /><figcaption>The Next Generation</figcaption></figure>
       </div>
-      <p style="margin-top:26px;font-size:19px;color:var(--ink-soft)">Have photos to share? Email them to <a href="mailto:austinreunion6@gmail.com">austinreunion6@gmail.com</a> and we'll add them to the album.</p>
+      <p style="margin-top:26px;font-size:19px;color:var(--ink-soft)">
+        Have photos to share? Email them to <a href="mailto:austinreunion6@gmail.com">austinreunion6@gmail.com</a> and we'll add them to the album.
+      </p>
     </div>
   </section>
 
@@ -319,102 +369,18 @@
   </div>
 </footer>
 
-<!-- ===== Realtime countdown (1s tick) ===== -->
 <script>
+  // Countdown to Friday, Oct 9, 2026, 5:00 PM Pacific. No animation.
   var target = new Date("2026-10-09T17:00:00-07:00").getTime();
-  var elD=document.querySelector("[data-d]"),elH=document.querySelector("[data-h]"),
-      elM=document.querySelector("[data-m]"),elS=document.querySelector("[data-s]");
-  function pad(n){return String(n).padStart(2,"0");}
-  function tick(){
+  var elD=document.querySelector("[data-d]"),elH=document.querySelector("[data-h]"),elM=document.querySelector("[data-m]");
+  function update(){
     var gap=target-Date.now();
-    if(gap<0){document.getElementById("count").innerHTML='<div class="u" style="min-width:auto"><b style="font-size:34px">The family has gathered. Welcome home.</b></div>';return;}
+    if(gap<0){document.getElementById("cd").textContent="The family has gathered. Welcome home.";return;}
     elD.textContent=Math.floor(gap/864e5);
-    elH.textContent=pad(Math.floor(gap%864e5/36e5));
-    elM.textContent=pad(Math.floor(gap%36e5/6e4));
-    elS.textContent=pad(Math.floor(gap%6e4/1e3));
+    elH.textContent=Math.floor(gap%864e5/36e5);
+    elM.textContent=Math.floor(gap%36e5/6e4);
   }
-  tick(); setInterval(tick,1000);
-</script>
-
-<!-- ===== WebGL parallax hero (Three.js) ===== -->
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-<script>
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var canvas = document.getElementById('gl');
-  var fallback = document.getElementById('heroFallback');
-  function showFallback(){ if(canvas) canvas.style.display='none'; if(fallback) fallback.style.display='block'; }
-
-  if(reduce || !window.THREE){ showFallback(); return; }
-
-  try{
-    var renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.z = 10;
-
-    var hero = canvas.parentElement;
-    function size(){
-      var w = hero.clientWidth, h = hero.clientHeight;
-      renderer.setSize(w,h,false);
-      camera.aspect = w/h; camera.updateProjectionMatrix();
-      fit();
-    }
-    var mesh, texAspect = 1.5;
-    function fit(){
-      if(!mesh) return;
-      // size plane to cover viewport at z=0, oversized 1.25x for parallax travel
-      var dist = camera.position.z;
-      var vH = 2*Math.tan(THREE.MathUtils.degToRad(camera.fov)/2)*dist;
-      var vW = vH*camera.aspect;
-      var coverAspect = Math.max(vW/vH, texAspect)/Math.min(vW/vH,texAspect);
-      var scale = 1.25;
-      // cover: fill both dims
-      var planeH, planeW;
-      if(vW/vH > texAspect){ planeW = vW*scale; planeH = planeW/texAspect; }
-      else { planeH = vH*scale; planeW = planeH*texAspect; }
-      mesh.scale.set(planeW, planeH, 1);
-    }
-
-    var loader = new THREE.TextureLoader();
-    loader.load('assets/austin.png', function(tex){
-      tex.colorSpace = THREE.SRGBColorSpace;
-      texAspect = tex.image.width/tex.image.height;
-      var geo = new THREE.PlaneGeometry(1,1,1,1);
-      var mat = new THREE.MeshBasicMaterial({map:tex});
-      mesh = new THREE.Mesh(geo, mat);
-      scene.add(mesh);
-      size();
-      animate();
-    }, undefined, function(){ showFallback(); });
-
-    var targetX=0, targetY=0, curX=0, curY=0, scrollY=0;
-    window.addEventListener('pointermove', function(e){
-      targetX = (e.clientX/window.innerWidth - 0.5);
-      targetY = (e.clientY/window.innerHeight - 0.5);
-    });
-    window.addEventListener('scroll', function(){ scrollY = window.scrollY||window.pageYOffset; }, {passive:true});
-    window.addEventListener('resize', size);
-
-    function animate(){
-      requestAnimationFrame(animate);
-      // ease mouse parallax (depth)
-      curX += (targetX-curX)*0.05; curY += (targetY-curY)*0.05;
-      if(mesh){
-        // scroll parallax: image drifts up slower than page + subtle zoom
-        var s = Math.min(scrollY/ (hero.clientHeight||800), 1);
-        mesh.position.y = curY*0.6 + s*2.2;      // mouse tilt + scroll drift
-        mesh.position.x = curX*0.9;
-        var z = 1 + s*0.08;                      // gentle zoom on scroll
-        mesh.scale.x = mesh.scale.x; // keep; zoom via camera
-        camera.position.z = 10 - s*0.6;          // push in slightly
-      }
-      renderer.render(scene,camera);
-    }
-    size();
-  }catch(err){ showFallback(); }
-})();
+  update();setInterval(update,30000);
 </script>
 </body>
 </html>
