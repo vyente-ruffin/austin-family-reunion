@@ -4,7 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Austin Family Reunion 2026 · Fresno, California</title>
-<meta name="description" content="The Austin Family Reunion — October 9–11, 2026 in Fresno, California." />
+<meta name="description" content="The Austin Family Reunion — our family's reunion home: history, photos, and every gathering. Next up: 2026 in Fresno, California." />
+<!-- Open Graph / social: the site is the Austin family's reunion HOME (recurring), not only the 2026 event -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Austin Family Reunion" />
+<meta property="og:title" content="Austin Family Reunion" />
+<meta property="og:description" content="Our family's reunion home — history, photos, and every gathering across the years. Next up: 2026 in Fresno, California." />
+<meta property="og:url" content="https://austinreunion.com/" />
+<meta property="og:image" content="https://austinreunion.com/images/austin-fam.png" />
+<meta property="og:image:alt" content="The Austin family together at a reunion" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Austin Family Reunion" />
+<meta name="twitter:description" content="Our family's reunion home — history, photos, and every gathering. Next up: 2026 in Fresno." />
+<meta name="twitter:image" content="https://austinreunion.com/images/austin-fam.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -38,6 +50,9 @@
   nav.main a:hover{background:var(--brown-2);color:#fff}
   nav.main a.rsvp{background:var(--burnt);color:#fff}
   nav.main a.rsvp:hover{background:var(--burnt-dark)}
+  nav.main a.fb{padding:8px 10px}
+  nav.main a.fb svg{width:24px;height:24px;fill:currentColor;display:block}
+  nav.main a.fb:hover{color:#fff}
 
   /* ---------- WebGL parallax hero ---------- */
   .hero{position:relative;min-height:96vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:#1c130b}
@@ -166,7 +181,7 @@
 <header class="site">
   <div class="nav-in">
     <a class="brand" href="#top"><img src="assets/tree-logo.png" alt="Austin family tree crest" /><b>Austin Family Reunion</b></a>
-    <nav class="main" aria-label="Main"><a href="#history">History</a><a href="register.html">Reunion Info</a><a href="register.html#register" class="rsvp">Register</a></nav>
+    <nav class="main" aria-label="Main"><a href="#history">History</a><a href="register.html">Reunion Info</a><a href="register.html#register" class="rsvp">Register</a><a class="fb" href="https://www.facebook.com/groups/248323684164389" target="_blank" rel="noopener" aria-label="Austin Family Reunion Facebook group" title="Facebook group"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/></svg></a></nav>
   </div>
 </header>
 
