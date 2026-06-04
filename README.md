@@ -1,28 +1,87 @@
-# Austin Family Reunion 2026
+# Austin Family Reunion — site handoff & working guide
 
-Single-page website for the **Austin Family Reunion** — Fresno, California · **October 9–11, 2026**.
+This README is the **single source of truth for continuing work**. A new session should be able to
+read this and pick up with zero discovery. If you change how the site works, update this file.
 
-## Live site
-- **Classic:** https://vyente-ruffin.github.io/austin-family-reunion/
-- **WebGL parallax + live countdown:** https://vyente-ruffin.github.io/austin-family-reunion/parallax.html
+The site is the **Austin Family Reunion**'s home (the recurring family gathering) — not only the
+2026 event. The current/next reunion is **Fresno, CA · October 9–11, 2026**.
 
-Static HTML/CSS/JS — no build step. Registration is an external Google Form. Images and crest live in `/assets`.
+---
 
-## How to swap an image
-1. Put your new picture in the `assets/` folder.
-2. **Easiest:** give it the **same filename** as the one you're replacing (see list below). Nothing else to change.
-   - Or use a new name and update the matching `src="assets/..."` in `index.html` / `parallax.html`.
-3. Commit + push — the live site updates automatically in ~1 minute.
+## TL;DR for a new session
+1. Edit **`parallax.html`** (the real homepage source).
+2. **Always** `cp parallax.html index.html` after editing (they must stay identical — see below).
+3. Preview locally: `cd /Users/sudo/austinreunion-site && python3 -m http.server 8011` → open `http://10.69.3.132:8011/parallax.html?v=N` (bump `N` to dodge cache).
+4. Ship: `git add -A && git commit && git push origin master` → live on `https://austinreunion.com` in ~1–2 min.
+5. Don't touch DNS or the GitHub Pages domain/cert config (see Hosting). The cert is in a known stuck state but the site is fully live over HTTPS.
 
-| File | Where it shows |
-|---|---|
-| `assets/austin.png` | Big hero background (sunset / tree) |
-| `assets/tree-logo.png` | Logo in the top bar and footer |
-| `assets/family-photo-1.png` | "Greetings, Family" portrait + gallery |
-| `assets/family-photo-2.png` | Saturday section + gallery |
-| `assets/family-photo-3.png` | Saturday section + gallery |
+---
 
-Tip: keep new photos a similar shape (landscape) so the layout stays clean. Compress large photos (aim under ~400 KB) for faster loading on phones.
+## Where things are
+- **Local repo:** `/Users/sudo/austinreunion-site` (a git repo; branch `master`).
+- **GitHub:** `vyente-ruffin/austin-family-reunion` (private). Pages source = `master` branch, root `/`.
+- **Live:** `https://austinreunion.com`, `https://www.austinreunion.com`, `https://austinreunion.com/register` — all serve over HTTPS (valid cert, Google Trust Services).
+- **GitHub Pages URL:** `https://vyente-ruffin.github.io/austin-family-reunion/` (redirects to the custom domain).
 
-## Status
-Draft for family feedback. **Hotel** and **registration** buttons are placeholders pending final URLs.
+## Canonical files (IMPORTANT)
+- **`parallax.html`** = the homepage **source of truth**. Edit this.
+- **`index.html`** = what the domain root serves. It is currently a **byte-for-byte copy of `parallax.html`**. After any edit to `parallax.html`, run `cp parallax.html index.html`. (If they drift, the live homepage won't match what you edited — this caused confusion before.)
+- **`register.html`** = the standalone "Register / Reunion Info" page → `austinreunion.com/register`. Nav links point here.
+- **`CNAME`** = `austinreunion.com` (tells GitHub Pages the custom domain — do not delete).
+- **Dead drafts — ignore / do not edit:** `v1.html`–`v10.html`, `classic-stronger-roots.html`, `family-reunion-landing-page.html`, `family-reunion-bottom-left.html`, `index-original-backup.html`. Left in place on purpose (don't delete without asking).
+
+## Images
+- Two image dirs: **`assets/`** (original generated art) and **`images/`** (newer real photos). Both are used.
+- **Greeting image** (next to "Greetings, Family"): `assets/fresno-mural.png`.
+- **History gallery** ("Reunions Through the Years"): `assets/family-photo-1.png` (2022 Las Vegas), `images/2024.jpg` (2024 Houston), `assets/family-photo-3.png` (Fresno 2026).
+- **OG/social image:** `images/austin-fam.png` (referenced via absolute `https://austinreunion.com/...`).
+- Image sizing is CSS-driven (`object-fit:cover`, `width:100%`) — **no exact dimensions required**; just match the rough aspect (landscape for gallery/greeting, square for committee avatars). Big & sharp (~1200px) is fine.
+
+## Page section map (`parallax.html`)
+- `<head>`: title, description, **Open Graph + Twitter** tags (framed as the family's reunion home; "next up: 2026 Fresno").
+- Nav (`<nav class="main">`): History · Reunion Info (`register.html`) · Register · **Facebook icon** → `https://www.facebook.com/groups/248323684164389` (group), opens new tab.
+- **Hero** (`.hero`): WebGL parallax via three.js (CDN `unpkg.com/three@0.160.0`). Plain JS `<script>` near the bottom. Has a reduced-motion + `<img class="hero-fallback">` fallback. Tunables that control the flicker: cover `scale` (1.6) and scroll drift (`s*0.9`) in the script — keep drift < overscan or the transparent canvas shows through at the top.
+- **Countdown** to Oct 9, 2026 (live JS).
+- **Greetings** split section (text + `fresno-mural.png`).
+- **Committee** (`.people`, `id="committee"`): 4×2 grid, name under each. 8 members. 5 have photos (`images/Darrell.png`, `images/Leshea.png`, `images/Lamarr.png`, `images/Bianca.png`, `images/Connie.png`); 3 still use initials avatars (`YL` Yvonne Sherii Lee-Long, `KW` Kamilah White, `LH` La Shan Harris). To add a photo: drop `images/<Name>.png` and replace that member's `<div class="avatar">XX</div>` with `<img class="avatar" src="images/<Name>.png" alt="Full Name" />`.
+- **History** (`id="history"`): the 3-photo gallery above.
+- Footer/register CTAs point to `register.html`.
+
+## Edit → preview → ship workflow
+```bash
+cd /Users/sudo/austinreunion-site
+# 1. edit parallax.html
+# 2. sync the served homepage:
+cp parallax.html index.html
+# 3. local preview (LAN: http://10.69.3.132:8011/parallax.html?v=N  — same Wi-Fi, bump N for cache)
+python3 -m http.server 8011
+# 4. push live:
+git add -A
+git commit -m "..."
+git push origin master
+# 5. live on https://austinreunion.com in ~1-2 min (GitHub Pages rebuild). Hard-refresh (Cmd+Shift+R) to beat browser cache.
+```
+Verify live after push: `curl -sL https://austinreunion.com/ | grep <your marker>`.
+
+## Hosting / DNS (do NOT change without reason)
+- **Registrar/DNS:** GoDaddy (`domaincontrol.com`). DNS is already set correctly:
+  - apex `@` -> 4 A records `185.199.108.153 / .109 / .110 / .111` (GitHub Pages)
+  - `www` -> CNAME `vyente-ruffin.github.io`
+  - No CAA records (Let's Encrypt/Google allowed).
+  - (GoDaddy has an API; a key was used once and should be rotated. Don't store it in the repo.)
+- **GitHub Pages custom domain** = `austinreunion.com`, set in repo Pages settings + the `CNAME` file.
+- **Cert status (known quirk):** `https_certificate.state` has been stuck at **`new`** in the GitHub API for a long time, but the **real cert is issued and the site serves HTTPS fine** (apex + www + /register all 200). Because the API says `new`, the **"Enforce HTTPS" toggle is blocked** (`https_enforced=false`). This is the only outstanding item and it's cosmetic (http->https auto-redirect).
+  - **DO NOT** remove/re-add the custom domain to "fix" it — every toggle **resets GitHub's cert clock** and made it worse. Leave it alone.
+  - To finish enforce when GitHub's API flips to `approved`: `gh api -X PUT repos/vyente-ruffin/austin-family-reunion/pages -F https_enforced=true` (or tick "Enforce HTTPS" in repo Settings -> Pages — the web UI sometimes works when the API 404s).
+
+## Gotchas (learned the hard way)
+- **`index.html` must mirror `parallax.html`** — always `cp` after editing, or the live homepage is stale.
+- **Browser/CDN cache:** after a push, use `?v=N` or hard-refresh; GitHub Pages also caches ~minutes.
+- **Don't nudge the GitHub domain/cert.** It's live; nudging only resets issuance.
+- **OG image/url must be absolute** (`https://austinreunion.com/...`) — relative breaks social previews. To refresh a stale Facebook preview, run the URL through Facebook's Sharing Debugger -> "Scrape Again."
+- **three.js hero flicker** = transparent canvas (`alpha:true`) showing through when the parallax plane drifts past its oversize. Fix is tuning (`scale` up / drift down), not a rewrite.
+
+## Current status (as of last session)
+- Live over HTTPS: yes — apex + www + /register.
+- Recent changes shipped: Fresno greeting image, history captions (2022 Las Vegas / 2024 Houston / Fresno 2026), real 2024 Houston photo, committee 4x2 grid (5 real photos + 3 initials), Facebook nav icon, OG/Twitter tags, hero flicker fix.
+- **Open items:** (1) Enforce-HTTPS flag pending GitHub cert API; (2) 3 committee members still on initials avatars (Yvonne, Kamilah, La Shan) — awaiting photos; (3) `assets/welcome-austin-2026.png` exists but is unused (greeting now uses `fresno-mural.png`).
