@@ -85,9 +85,16 @@
   @media(max-width:760px){.split{grid-template-columns:1fr;gap:24px}}
 
   /* parallax mid-page banner (CSS, subtle) */
-  .pbanner{height:340px;background-image:url('assets/family-photo-2.png');background-size:cover;background-position:center;background-attachment:fixed;position:relative;border-top:none}
+  .pbanner{height:340px;background-image:url('images/austin-fam.png');background-size:cover;background-position:center;background-attachment:fixed;position:relative;border-top:none}
   .pbanner .ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,19,11,.6),rgba(28,19,11,.5));display:flex;align-items:center;justify-content:center;text-align:center}
   .pbanner .ov p{color:#fff;font-family:"Playfair Display",serif;font-size:clamp(26px,4vw,42px);font-weight:600;max-width:24ch;text-shadow:0 2px 18px rgba(0,0,0,.5);padding:0 20px}
+
+  /* Fresno promo graphic + info link (after countdown) */
+  .promo{background:var(--cream);padding:50px 0;position:relative;z-index:3;border-top:none}
+  .promo-card{display:block;max-width:var(--maxw);margin:0 auto;padding:0 24px;text-decoration:none;text-align:center}
+  .promo-card img{width:100%;border-radius:18px;box-shadow:0 16px 40px rgba(43,26,15,.22);border:5px solid #fff}
+  .promo-cta{display:inline-flex;align-items:center;gap:10px;margin-top:20px;background:var(--burnt);color:#fff;font-weight:700;font-size:19px;padding:15px 32px;border-radius:10px;border:2px solid var(--burnt)}
+  .promo-card:hover .promo-cta{background:var(--burnt-dark);border-color:var(--burnt-dark)}
 
   .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .pcard{background:#fff;border:2px solid var(--line);border-radius:16px;padding:28px 22px;text-align:center}
@@ -159,10 +166,7 @@
 <header class="site">
   <div class="nav-in">
     <a class="brand" href="#top"><img src="assets/tree-logo.png" alt="Austin family tree crest" /><b>Austin Family Reunion</b></a>
-    <nav class="main" aria-label="Main">
-      <a href="#schedule">Weekend</a><a href="#stay">Hotel</a><a href="#history">History</a>
-      <a href="#register" class="rsvp">Register</a>
-    </nav>
+    <nav class="main" aria-label="Main"><a href="#history">History</a><a href="register.html">Reunion Info</a><a href="register.html#register" class="rsvp">Register</a></nav>
   </div>
 </header>
 
@@ -184,11 +188,12 @@
       </div>
       <div class="cta-row">
         <a class="btn" href="#register">Register Today</a>
-        <a class="btn ghost" href="#schedule">See the Weekend</a>
+        <a class="btn ghost" href="register.html#schedule">See the Weekend</a>
       </div>
     </div>
     <div class="scroll-hint" aria-hidden="true">▾ Scroll</div>
   </section>
+
 
   <!-- FEATURE STRIP -->
   <section class="features" aria-label="Why we gather">
@@ -208,7 +213,7 @@
         <p class="sub" style="font-size:21px;max-width:60ch">We are so glad you're here. After Houston in 2024, the Austin family gathers again in 2026 — this time in Fresno, California. This page has everything you need: how to register, the weekend schedule, where to stay, and a look back at the reunions that built us. We can't wait to see you.</p>
         <a class="btn" href="#register">Register Today</a>
       </div>
-      <img src="assets/welcome-austin-2026.png" alt="Welcome to Fresno — Austin Family Reunion 2026" />
+      <img src="assets/fresno-mural.png" alt="Fresno, California — host city of the Austin Family Reunion 2026" />
     </div>
   </section>
 
@@ -225,50 +230,6 @@
         <div class="pcard"><div class="tier">Seniors<br>65 &amp; up</div><div class="amt"><sup>$</sup>110</div><div class="note">Our honored elders.</div></div>
         <div class="pcard"><div class="tier">Children<br>Ages 4–12</div><div class="amt"><sup>$</sup>110</div><div class="note">Includes a ride wristband.</div></div>
         <div class="pcard free"><div class="tier">Little Ones<br>3 &amp; under</div><div class="amt">Free</div><div class="note">No charge at all.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCHEDULE -->
-  <section id="schedule">
-    <div class="wrap">
-      <h2>The Weekend</h2>
-      <p class="sub">Three days in Fresno — here's the plan.</p>
-      <div class="day">
-        <div class="when-tag">Friday, October 9 · Evening</div>
-        <h3>Family Meet &amp; Greet</h3>
-        <p>Join us Friday evening for our Family Meet &amp; Greet. We're finalizing the details and have a few exciting options to be announced as we get closer to the event.</p>
-      </div>
-      <div class="day">
-        <div class="when-tag">Saturday, October 10 · All Day</div>
-        <h3>Family Fun Day at Blackbeard's</h3>
-        <p>Start your morning with breakfast at your hotel, then relax or explore Fresno. In the afternoon, the festivities begin at Blackbeard's Family Entertainment Center — food, games, and activities for all ages. Lunch is catered and included. Children 12 and under receive a ride wristband at no extra cost; additional wristbands for ages 13+ may be purchased for $40.</p>
-        <ul><li>Family group photos</li><li>Games for kids, teens, and adults</li><li>Music and dancing</li><li>A vote for the 2028 reunion location</li></ul>
-        <div class="sched-photos">
-          <img src="assets/family-photo-2.png" alt="The family sharing a meal together outdoors at golden hour" />
-          <img src="assets/family-photo-3.png" alt="Children running and playing in a field at sunset" />
-        </div>
-      </div>
-      <div class="day">
-        <div class="when-tag">Sunday, October 11 · Morning</div>
-        <h3>Madera Cemetery Tribute</h3>
-        <p>We close the weekend with a visit to the Madera Cemetery to honor our ancestors and place flowers on grave sites. Transportation is provided by charter bus and is included in your registration — whether or not you join the Sunday excursion. A final excursion follows before we return to Fresno to depart.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- STAY -->
-  <section id="stay">
-    <div class="wrap">
-      <h2>Where to Stay</h2>
-      <p class="sub">We've arranged a group room block so the family can stay close together.</p>
-      <div class="stay">
-        <div>
-          <h3>Hilton Garden Inn — Fresno</h3>
-          <p>Book within the Austin Family Reunion room block to receive our group rate and stay near the weekend's activities. Call the hotel and mention the <strong>Austin Family Reunion</strong> group rate, or use the reservation link.</p>
-          <p style="margin-top:18px"><a class="btn" href="https://group.hiltongardeninn.com/fyitn6" target="_blank" rel="noopener">Reserve Your Room</a></p>
-        </div>
-        <div class="hotel-card"><div class="h">Hilton Garden Inn</div><p style="margin:10px 0 0">Fresno, California</p><p style="margin:4px 0 0;font-size:17px">Group rate · Austin Family Reunion</p></div>
       </div>
     </div>
   </section>

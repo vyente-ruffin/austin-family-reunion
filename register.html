@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Austin Family Reunion 2026 · Fresno, California</title>
+<title>Register · Austin Family Reunion 2026</title>
 <meta name="description" content="The Austin Family Reunion — October 9–11, 2026 in Fresno, California." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -85,7 +85,7 @@
   @media(max-width:760px){.split{grid-template-columns:1fr;gap:24px}}
 
   /* parallax mid-page banner (CSS, subtle) */
-  .pbanner{height:340px;background-image:url('images/austin-fam.png');background-size:cover;background-position:center;background-attachment:fixed;position:relative;border-top:none}
+  .pbanner{height:340px;background-image:url('assets/family-photo-2.png');background-size:cover;background-position:center;background-attachment:fixed;position:relative;border-top:none}
   .pbanner .ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,19,11,.6),rgba(28,19,11,.5));display:flex;align-items:center;justify-content:center;text-align:center}
   .pbanner .ov p{color:#fff;font-family:"Playfair Display",serif;font-size:clamp(26px,4vw,42px);font-weight:600;max-width:24ch;text-shadow:0 2px 18px rgba(0,0,0,.5);padding:0 20px}
 
@@ -121,6 +121,8 @@
   .stay{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:16px;padding:32px}
   .stay h3{font-family:"Playfair Display",serif;font-size:28px;font-weight:600;margin-bottom:10px}
   .stay p{font-size:19px;color:var(--ink-soft);margin-bottom:10px}
+  
+  .stay img{width:100%;border-radius:14px;box-shadow:0 12px 30px rgba(43,26,15,.20);border:4px solid #fff}
   .stay .hotel-card{background:var(--cream-2);border:2px solid var(--line);border-radius:14px;padding:24px;text-align:center}
   .stay .hotel-card .h{font-family:"Playfair Display",serif;font-size:23px;font-weight:600;color:var(--brown)}
   @media(max-width:760px){.stay{grid-template-columns:1fr}}
@@ -165,104 +167,100 @@
 
 <header class="site">
   <div class="nav-in">
-    <a class="brand" href="#top"><img src="assets/tree-logo.png" alt="Austin family tree crest" /><b>Austin Family Reunion</b></a>
-    <nav class="main" aria-label="Main"><a href="#history">History</a><a href="register.html">Reunion Info</a><a href="register.html#register" class="rsvp">Register</a></nav>
+    <a class="brand" href="index.html"><img src="assets/tree-logo.png" alt="Austin family tree crest" /><b>Austin Family Reunion</b></a>
+    <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="#pricing">Pricing</a><a href="#schedule">Weekend</a><a href="#stay">Hotel</a><a href="#tshirts">T-Shirts</a><a href="#register" class="rsvp">Register</a></nav>
   </div>
 </header>
 
 <main id="top">
-  <!-- WEBGL PARALLAX HERO -->
-  <section class="hero">
-    <canvas id="gl"></canvas>
-    <img class="hero-fallback" id="heroFallback" src="assets/austin.png" alt="A family walking together toward a great oak tree at sunset" style="display:none" />
-    <div class="hero-scrim"></div>
-    <div class="hero-in">
-      <span class="eyebrow">2026 Family Reunion</span>
-      <h1>Stronger Roots.<span class="o">Stronger Family.</span></h1>
-      <p class="where">Fresno, California · October 9 – 11, 2026</p>
-      <div class="count" id="count" aria-label="Countdown to the reunion">
-        <div class="u"><b data-d>00</b><span>Days</span></div>
-        <div class="u"><b data-h>00</b><span>Hours</span></div>
-        <div class="u"><b data-m>00</b><span>Minutes</span></div>
-        <div class="u"><b data-s>00</b><span>Seconds</span></div>
-      </div>
-      <div class="cta-row">
-        <a class="btn" href="#register">Register Today</a>
-        <a class="btn ghost" href="register.html#schedule">See the Weekend</a>
-      </div>
-    </div>
-    <div class="scroll-hint" aria-hidden="true">▾ Scroll</div>
-  </section>
-
-
-  <!-- FEATURE STRIP -->
-  <section class="features" aria-label="Why we gather">
-    <div class="grid">
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M16 7a4 4 0 1 0-8 0M3 21v-1a5 5 0 0 1 5-5M21 21v-1a5 5 0 0 0-5-5M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg><h3>Reconnect</h3><p>See family near and far.</p></div>
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M5 13l2 7h10l2-7M8 9l4-3 4 3M3 13h18"/></svg><h3>Celebrate</h3><p>Food, games & joy for all ages.</p></div>
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10Z"/></svg><h3>Honor</h3><p>Our elders and ancestors.</p></div>
-      <div class="feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#e0772f" stroke-width="1.8"><path d="M12 3C7 8 7 13 12 21 17 13 17 8 12 3ZM12 8v13"/></svg><h3>Gather</h3><p>Three days, one family.</p></div>
-    </div>
-  </section>
-
-  <!-- GREETINGS -->
-  <section id="greetings">
-    <div class="wrap split">
-      <div>
-        <h2>Greetings, <span class="o">Family</span></h2>
-        <p class="sub" style="font-size:21px;max-width:60ch">We are so glad you're here. After Houston in 2024, the Austin family gathers again in 2026 — this time in Fresno, California. This page has everything you need: how to register, the weekend schedule, where to stay, and a look back at the reunions that built us. We can't wait to see you.</p>
-        <a class="btn" href="#register">Register Today</a>
-      </div>
-      <img src="assets/fresno-mural.png" alt="Fresno, California — host city of the Austin Family Reunion 2026" />
-    </div>
-  </section>
-
-  <!-- PARALLAX BANNER -->
-  <section class="pbanner" aria-hidden="false"><div class="ov"><p>Celebrating our past. Building our future — together.</p></div></section>
-
-  <!-- REGISTRATION -->
-  <section id="register-info">
+  <section style="padding-top:56px">
     <div class="wrap">
-      <h2>Registration</h2>
+      <h2>2026 Reunion <span class="o">Information</span></h2>
+      <p class="sub">Everything you need for the weekend in Fresno &mdash; October 9&ndash;11, 2026.</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Registration <span class="o">Pricing</span></h2>
       <p class="sub">Registration covers the weekend's events and Saturday's catered lunch.</p>
       <div class="price-grid">
         <div class="pcard"><div class="tier">Adults<br>13 &amp; up</div><div class="amt"><sup>$</sup>150</div><div class="note">Full weekend access.</div></div>
         <div class="pcard"><div class="tier">Seniors<br>65 &amp; up</div><div class="amt"><sup>$</sup>110</div><div class="note">Our honored elders.</div></div>
-        <div class="pcard"><div class="tier">Children<br>Ages 4–12</div><div class="amt"><sup>$</sup>110</div><div class="note">Includes a ride wristband.</div></div>
+        <div class="pcard"><div class="tier">Children<br>Ages 4&ndash;12</div><div class="amt"><sup>$</sup>110</div><div class="note">Includes a ride wristband.</div></div>
         <div class="pcard free"><div class="tier">Little Ones<br>3 &amp; under</div><div class="amt">Free</div><div class="note">No charge at all.</div></div>
       </div>
     </div>
   </section>
 
-  <!-- COMMITTEE -->
-  <section id="committee">
+  <!-- SCHEDULE -->
+  <section id="schedule">
     <div class="wrap">
-      <h2>Reunion Committee</h2>
-      <p class="sub">The family members working hard to bring us all together. Thank you.</p>
-      <div class="people">
-        <div class="person"><img class="avatar" src="images/Darrell.png" alt="Darrell Newsome" /><div class="nm">Darrell Newsome</div></div>
-        <div class="person"><div class="avatar">YL</div><div class="nm">Yvonne Sherii Lee-Long</div></div>
-        <div class="person"><img class="avatar" src="images/Leshea.png" alt="Leshea Tarver" /><div class="nm">Leshea Tarver</div></div>
-        <div class="person"><div class="avatar">KW</div><div class="nm">Kamilah White</div></div>
-        <div class="person"><img class="avatar" src="images/Lamarr.png" alt="Lamarr Norris" /><div class="nm">Lamarr Norris</div></div>
-        <div class="person"><img class="avatar" src="images/Bianca.png" alt="Bianca Jenkins" /><div class="nm">Bianca Jenkins</div></div>
-        <div class="person"><img class="avatar" src="images/Connie.png" alt="Connie Breazell" /><div class="nm">Connie Breazell</div></div>
-        <div class="person"><div class="avatar">LH</div><div class="nm">La Shan Harris</div></div>
+      <h2>The <span class="o">Weekend</span></h2>
+      <p class="sub">Three days in Fresno &mdash; here's the plan.</p>
+      <div class="day">
+        <div class="when-tag">Friday, October 9 &middot; Evening</div>
+        <h3>Family Meet &amp; Greet</h3>
+        <p>Join us Friday evening for our Family Meet &amp; Greet! We're finalizing details and have a few exciting options to be announced as we get closer to the event.</p>
+      </div>
+      <div class="day">
+        <div class="when-tag">Saturday, October 10 &middot; All Day</div>
+        <h3>Family Fun Day at Blackbeard's</h3>
+        <p>Start your morning with breakfast at your hotel and take some time to relax or explore Fresno. At Blackbeard's Family Entertainment Center, the festivities begin in the afternoon &mdash; enjoy food, games, and activities for all ages. Lunch will be catered and is included in the cost of registration. Children 12 and under will also receive a wristband for access to the rides, included with their registration. Additional wristbands for those 13+ can be purchased for $40.</p>
+        <ul><li>Family group photos</li><li>Games for kids, teens, and adults</li><li>Music and dancing</li><li>A vote for the 2028 reunion location</li></ul>
+        <div class="sched-photos" style="grid-template-columns:1fr;max-width:340px;margin-top:22px">
+          <img src="assets/blackbeards-logo.png" alt="Blackbeard's Family Entertainment Center logo" style="border:none;box-shadow:none;background:transparent" />
+        </div>
+      </div>
+      <div class="day">
+        <div class="when-tag">Sunday, October 11 &middot; Morning</div>
+        <h3>Madera Cemetery Visit &amp; Excursion</h3>
+        <p>We'll close out the weekend with a visit to the Madera Cemetery to pay tribute to our ancestors and place flowers on grave sites. Transportation will be provided via charter bus and is included in the price of your registration &mdash; whether or not you attend the Sunday excursion. After the cemetery visit will be a final excursion before returning to Fresno to depart.</p>
+        <div class="sched-photos" style="grid-template-columns:1fr;max-width:640px;margin-top:22px">
+          <img src="assets/cemetery-fresno.jpg" alt="Fresno Memorial Gardens" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HISTORY -->
-  <section id="history">
+
+  <!-- STAY -->
+  <section id="stay">
     <div class="wrap">
-      <h2>Reunions Through the <span class="o">Years</span></h2>
-      <p class="sub">Our family has gathered for generations. Here's where we've been.</p>
-      <div class="gallery">
-        <figure><img src="assets/family-photo-1.png" alt="2022 Las Vegas reunion" /><figcaption>2022 Las Vegas</figcaption></figure>
-        <figure><img src="assets/family-photo-2.png" alt="2024 Houston reunion" /><figcaption>2024 Houston</figcaption></figure>
-        <figure><img src="assets/family-photo-3.png" alt="Fresno 2026 reunion" /><figcaption>Fresno 2026</figcaption></figure>
+      <h2>Where to <span class="o">Stay</span></h2>
+      <p class="sub">We've arranged a group room block so the family can stay close together.</p>
+      <div class="stay">
+        <div>
+          <h3>Hilton Garden Inn &mdash; Fresno</h3>
+          <p>Book within the <strong>Austin Family Reunion</strong> room block to receive our group rate and stay near the weekend's activities. Call the hotel and mention the Austin Family Reunion group rate, or use the reservation link below.</p>
+          <ul style="margin:0 0 14px 20px;color:var(--ink-soft);font-size:18px">
+            <li>Group rate &mdash; Austin Family Reunion block</li>
+            <li>Close to the weekend's activities</li>
+            <li>Reserve early &mdash; the block is limited</li>
+          </ul>
+          <a class="btn" href="https://group.hiltongardeninn.com/fyitn6" target="_blank" rel="noopener">Reserve Your Room &rarr;</a>
+        </div>
+        <img src="assets/hilton-fresno.jpg" alt="Hilton Garden Inn, Fresno, California" />
       </div>
-      <p style="margin-top:26px;font-size:19px;color:var(--ink-soft)">Have photos to share? Email them to <a href="mailto:austinreunion6@gmail.com">austinreunion6@gmail.com</a> and we'll add them to the album.</p>
+    </div>
+  </section>
+
+  <!-- TSHIRTS -->
+  <section id="tshirts">
+    <div class="wrap">
+      <h2>Reunion <span class="o">T-Shirts</span></h2>
+      <p class="sub">Available for pre-order before the event. Designs feature our updated Austin Family Crest, which carries meaningful symbols of our family's unity and legacy.</p>
+      <div class="split">
+        <div>
+          <div class="price-grid" style="grid-template-columns:1fr 1fr;max-width:480px;margin-bottom:18px">
+            <div class="pcard"><div class="tier">Sizes S&ndash;XL</div><div class="amt"><sup>$</sup>10</div></div>
+            <div class="pcard"><div class="tier">Sizes 2XL &amp; above</div><div class="amt"><sup>$</sup>12</div></div>
+          </div>
+          <p class="note" style="font-size:18px;color:var(--ink-soft)">Pre-order details coming soon. Sizes and quantities will be collected before the event.</p>
+        </div>
+        <img src="assets/tshirt-2026.png" alt="Austin 2026 Family Reunion T-shirt featuring the family crest tree, Fresno" style="max-width:380px;margin:0 auto" />
+      </div>
     </div>
   </section>
 
@@ -271,11 +269,10 @@
     <div class="wrap">
       <h2>Ready to Join Us?</h2>
       <p>Register your whole party in one place. We can't wait to see the whole family in Fresno.</p>
-      <a class="btn" href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener">Register for the Reunion →</a>
+      <a class="btn" href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener">Register for the Reunion &rarr;</a>
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <img src="assets/tree-logo.png" alt="Austin family tree crest" />
@@ -285,102 +282,5 @@
   </div>
 </footer>
 
-<!-- ===== Realtime countdown (1s tick) ===== -->
-<script>
-  var target = new Date("2026-10-09T17:00:00-07:00").getTime();
-  var elD=document.querySelector("[data-d]"),elH=document.querySelector("[data-h]"),
-      elM=document.querySelector("[data-m]"),elS=document.querySelector("[data-s]");
-  function pad(n){return String(n).padStart(2,"0");}
-  function tick(){
-    var gap=target-Date.now();
-    if(gap<0){document.getElementById("count").innerHTML='<div class="u" style="min-width:auto"><b style="font-size:34px">The family has gathered. Welcome home.</b></div>';return;}
-    elD.textContent=Math.floor(gap/864e5);
-    elH.textContent=pad(Math.floor(gap%864e5/36e5));
-    elM.textContent=pad(Math.floor(gap%36e5/6e4));
-    elS.textContent=pad(Math.floor(gap%6e4/1e3));
-  }
-  tick(); setInterval(tick,1000);
-</script>
-
-<!-- ===== WebGL parallax hero (Three.js) ===== -->
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-<script>
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var canvas = document.getElementById('gl');
-  var fallback = document.getElementById('heroFallback');
-  function showFallback(){ if(canvas) canvas.style.display='none'; if(fallback) fallback.style.display='block'; }
-
-  if(reduce || !window.THREE){ showFallback(); return; }
-
-  try{
-    var renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.z = 10;
-
-    var hero = canvas.parentElement;
-    function size(){
-      var w = hero.clientWidth, h = hero.clientHeight;
-      renderer.setSize(w,h,false);
-      camera.aspect = w/h; camera.updateProjectionMatrix();
-      fit();
-    }
-    var mesh, texAspect = 1.5;
-    function fit(){
-      if(!mesh) return;
-      // size plane to cover viewport at z=0, oversized 1.25x for parallax travel
-      var dist = camera.position.z;
-      var vH = 2*Math.tan(THREE.MathUtils.degToRad(camera.fov)/2)*dist;
-      var vW = vH*camera.aspect;
-      var coverAspect = Math.max(vW/vH, texAspect)/Math.min(vW/vH,texAspect);
-      var scale = 1.25;
-      // cover: fill both dims
-      var planeH, planeW;
-      if(vW/vH > texAspect){ planeW = vW*scale; planeH = planeW/texAspect; }
-      else { planeH = vH*scale; planeW = planeH*texAspect; }
-      mesh.scale.set(planeW, planeH, 1);
-    }
-
-    var loader = new THREE.TextureLoader();
-    loader.load('assets/austin.png', function(tex){
-      tex.colorSpace = THREE.SRGBColorSpace;
-      texAspect = tex.image.width/tex.image.height;
-      var geo = new THREE.PlaneGeometry(1,1,1,1);
-      var mat = new THREE.MeshBasicMaterial({map:tex});
-      mesh = new THREE.Mesh(geo, mat);
-      scene.add(mesh);
-      size();
-      animate();
-    }, undefined, function(){ showFallback(); });
-
-    var targetX=0, targetY=0, curX=0, curY=0, scrollY=0;
-    window.addEventListener('pointermove', function(e){
-      targetX = (e.clientX/window.innerWidth - 0.5);
-      targetY = (e.clientY/window.innerHeight - 0.5);
-    });
-    window.addEventListener('scroll', function(){ scrollY = window.scrollY||window.pageYOffset; }, {passive:true});
-    window.addEventListener('resize', size);
-
-    function animate(){
-      requestAnimationFrame(animate);
-      // ease mouse parallax (depth)
-      curX += (targetX-curX)*0.05; curY += (targetY-curY)*0.05;
-      if(mesh){
-        // scroll parallax: image drifts up slower than page + subtle zoom
-        var s = Math.min(scrollY/ (hero.clientHeight||800), 1);
-        mesh.position.y = curY*0.6 + s*2.2;      // mouse tilt + scroll drift
-        mesh.position.x = curX*0.9;
-        var z = 1 + s*0.08;                      // gentle zoom on scroll
-        mesh.scale.x = mesh.scale.x; // keep; zoom via camera
-        camera.position.z = 10 - s*0.6;          // push in slightly
-      }
-      renderer.render(scene,camera);
-    }
-    size();
-  }catch(err){ showFallback(); }
-})();
-</script>
 </body>
 </html>
