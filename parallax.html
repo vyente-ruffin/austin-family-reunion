@@ -274,7 +274,7 @@
       <p class="sub">Our family has gathered for generations. Here's where we've been.</p>
       <div class="gallery">
         <figure><img src="assets/family-photo-1.png" alt="2022 Las Vegas reunion" /><figcaption>2022 Las Vegas</figcaption></figure>
-        <figure><img src="assets/family-photo-2.png" alt="2024 Houston reunion" /><figcaption>2024 Houston</figcaption></figure>
+        <figure><img src="images/2024.jpg" alt="2024 Houston reunion" /><figcaption>2024 Houston</figcaption></figure>
         <figure><img src="assets/family-photo-3.png" alt="Fresno 2026 reunion" /><figcaption>Fresno 2026</figcaption></figure>
       </div>
       <p style="margin-top:26px;font-size:19px;color:var(--ink-soft)">Have photos to share? Email them to <a href="mailto:austinreunion6@gmail.com">austinreunion6@gmail.com</a> and we'll add them to the album.</p>
@@ -350,7 +350,7 @@
       var vH = 2*Math.tan(THREE.MathUtils.degToRad(camera.fov)/2)*dist;
       var vW = vH*camera.aspect;
       var coverAspect = Math.max(vW/vH, texAspect)/Math.min(vW/vH,texAspect);
-      var scale = 1.25;
+      var scale = 1.6;
       // cover: fill both dims
       var planeH, planeW;
       if(vW/vH > texAspect){ planeW = vW*scale; planeH = planeW/texAspect; }
@@ -385,7 +385,7 @@
       if(mesh){
         // scroll parallax: image drifts up slower than page + subtle zoom
         var s = Math.min(scrollY/ (hero.clientHeight||800), 1);
-        mesh.position.y = curY*0.6 + s*2.2;      // mouse tilt + scroll drift
+        mesh.position.y = curY*0.6 + s*0.9;      // mouse tilt + scroll drift (kept within plane overscan)
         mesh.position.x = curX*0.9;
         var z = 1 + s*0.08;                      // gentle zoom on scroll
         mesh.scale.x = mesh.scale.x; // keep; zoom via camera
