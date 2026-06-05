@@ -64,7 +64,9 @@ To swap one: optimize the new image (above), then change that `<figure>`'s `src=
 - **Greetings** split section (text + `fresno-mural.png`).
 - **Committee** (`.people`, `id="committee"`): 4×2 grid, name under each. 8 members. 5 have photos (`images/Darrell.png`, `images/Leshea.png`, `images/Lamarr.png`, `images/Bianca.png`, `images/Connie.png`); 3 still use initials avatars (`YL` Yvonne Sherii Lee-Long, `KW` Kamilah White, `LH` La Shan Harris). To add a photo: drop `images/<Name>.png` and replace that member's `<div class="avatar">XX</div>` with `<img class="avatar" src="images/<Name>.png" alt="Full Name" />`.
 - **History** (`id="history"`): the 3-photo gallery above.
-- Footer/register CTAs point to `register.html`.
+- **Parallax banner** (`.pbanner`): a CSS `background-attachment:fixed` parallax strip using `images/austin-fam-strip.jpg` — a **top-anchored crop** of `austin-fam.png` made with `sips -c 600 1448 --cropOffset 60 0` so faces aren't clipped while keeping the fixed-parallax effect. If you swap this image, crop it to a wide short face-strip the same way (centered crops clip the upper heads).
+- **Register CTAs → Google Form.** Every "Register" / "Register Today" / "Register for the Reunion" button (in BOTH `parallax.html` and `register.html`) links to **`https://forms.gle/RDdt1tTXfw2FbaG8A`** (`target="_blank"`). To change the form, update that URL everywhere in both files (e.g. `grep -rl forms.gle .`). "Reunion Info" and "See the Weekend" are NOT register buttons — they point to `register.html`.
+- Hero CTA buttons ("Register Today" / "See the Weekend") are forced equal width via `.hero .cta-row .btn{min-width:220px}`.
 
 ## Edit → preview → ship workflow
 ```bash
@@ -99,8 +101,10 @@ Verify live after push: `curl -sL https://austinreunion.com/ | grep <your marker
 - **Don't nudge the GitHub domain/cert.** It's live; nudging only resets issuance.
 - **OG image/url must be absolute** (`https://austinreunion.com/...`) — relative breaks social previews. To refresh a stale Facebook preview, run the URL through Facebook's Sharing Debugger -> "Scrape Again."
 - **three.js hero flicker** = transparent canvas (`alpha:true`) showing through when the parallax plane drifts past its oversize. Fix is tuning (`scale` up / drift down), not a rewrite.
+- **Hero load-flash:** `.hero` has a CSS `background:#1c130b url('assets/austin.png') center/cover` placeholder so there's a real image before the WebGL texture loads (textures are transparent until downloaded). Don't remove it.
+- **Do NOT put `backdrop-filter: blur()` over the WebGL hero.** The countdown boxes (`.count .u`) intentionally use a solid `rgba` bg, not blur — backdrop-filter over the constantly-re-rendering canvas flickers on load/mouse-move (documented Chromium bug). Use a more opaque solid background instead.
 
 ## Current status (as of last session)
 - Live over HTTPS: yes — apex + www + /register.
-- Recent changes shipped: Fresno greeting image, history captions (2022 Las Vegas / 2024 Houston / Fresno 2026), real 2024 Houston photo, committee 4x2 grid (5 real photos + 3 initials), Facebook nav icon, OG/Twitter tags, hero flicker fix.
+- Recent changes shipped: Fresno greeting image; history captions + real 2022/2024 photos + Fresno-2026 coming-soon placeholder (uniform 4:3); committee 4x2 grid (5 real photos + 3 initials); Facebook nav icon; OG/Twitter tags; all Register CTAs → Google Form; hero load-flash fix (CSS placeholder) + countdown backdrop-filter removed (flicker); parallax banner top-anchored face strip; features strip height halved; equal-width hero buttons.
 - **Open items:** (1) Enforce-HTTPS flag pending GitHub cert API; (2) 3 committee members still on initials avatars (Yvonne, Kamilah, La Shan) — awaiting photos; (3) `assets/welcome-austin-2026.png` exists but is unused (greeting now uses `fresno-mural.png`).
