@@ -34,7 +34,7 @@ The site is the **Austin Family Reunion**'s home (the recurring family gathering
 - Two image dirs: **`assets/`** (original generated art) and **`images/`** (newer real photos). Both are used.
 - **Greeting image** (next to "Greetings, Family"): `assets/fresno-mural.png`.
 - **History gallery** ("Reunions Through the Years"): `assets/family-photo-1.png` (2022 Las Vegas), `images/2024.jpg` (2024 Houston), `assets/family-photo-3.png` (Fresno 2026).
-- **OG/social image:** `images/austin-fam.png` (referenced via absolute `https://austinreunion.com/...`).
+- **OG/social image:** `images/austin-fam-og.png` — a **1200×630 (1.91:1) top-anchored crop** of `austin-fam.png` so link-preview cards (iMessage/SMS/Facebook crop to ~1.91:1) don't clip the tops of heads. Referenced via absolute `https://austinreunion.com/...` with explicit `og:image:width/height`. (The old `austin-fam.png` is 4:3 and got center-cropped → clipped heads. If you reshoot, regenerate this crop top-anchored the same way as the `.pbanner` strip.)
 - Image sizing is CSS-driven (`object-fit:cover`, `width:100%`) — **no exact dimensions required**; just match the rough aspect (landscape for gallery/greeting, square for committee avatars). Big & sharp (~1200px) is fine.
 
 ### Optimize before adding (IMPORTANT — phone photos are huge)
