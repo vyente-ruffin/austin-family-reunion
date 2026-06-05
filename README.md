@@ -37,6 +37,25 @@ The site is the **Austin Family Reunion**'s home (the recurring family gathering
 - **OG/social image:** `images/austin-fam.png` (referenced via absolute `https://austinreunion.com/...`).
 - Image sizing is CSS-driven (`object-fit:cover`, `width:100%`) — **no exact dimensions required**; just match the rough aspect (landscape for gallery/greeting, square for committee avatars). Big & sharp (~1200px) is fine.
 
+### Optimize before adding (IMPORTANT — phone photos are huge)
+Raw phone photos are ~6000px / 8 MB. **Never commit those** — they make the page slow, especially on phones. Downscale to a web copy first (target **≤ ~500 KB, max ~1600px**):
+```bash
+cd /Users/sudo/austinreunion-site
+# JPEG photo -> web jpg (~1600px, quality 78):
+sips -s format jpeg -s formatOptions 78 -Z 1600 images/SOURCE.JPG --out images/NAME-web.jpg
+# PNG graphic that's still heavy -> convert to jpg to shrink:
+sips -s format jpeg -s formatOptions 80 -Z 1600 images/SOURCE.png --out images/NAME-web.jpg
+du -h images/NAME-web.jpg   # confirm it's small
+```
+Keep the original if you want, but reference the `-web` copy in the HTML.
+
+### Swapping a "Reunions Through the Years" gallery photo
+The 3 gallery photos are forced to a **uniform 4:3** via `.gallery img{aspect-ratio:4/3;object-fit:cover}` (line ~158), so any image auto-stretches/crops to match — you do NOT resize for shape, only for file weight (above). Current sources:
+- 2022 Las Vegas → `images/2022-web.jpg`
+- 2024 Houston → `images/2024.jpg`
+- Fresno 2026 → `images/coming-soon-web.jpg` (placeholder; swap for the real Fresno photo after the event)
+To swap one: optimize the new image (above), then change that `<figure>`'s `src=` in `parallax.html`, `cp parallax.html index.html`, preview, push.
+
 ## Page section map (`parallax.html`)
 - `<head>`: title, description, **Open Graph + Twitter** tags (framed as the family's reunion home; "next up: 2026 Fresno").
 - Nav (`<nav class="main">`): History · Reunion Info (`register.html`) · Register · **Facebook icon** → `https://www.facebook.com/groups/248323684164389` (group), opens new tab.
