@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Austin Family Reunion 2026 · Fresno, California</title>
+<meta name="robots" content="noindex,nofollow" />
+
+<meta name="description" content="The Austin Family Reunion — our family's reunion home: history, photos, and every gathering. Next up: 2026 in Fresno, California." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Austin Family Reunion" />
+<meta property="og:title" content="Austin Family Reunion" />
+<meta property="og:description" content="Our family's reunion home — history, photos, and every gathering across the years. Next up: 2026 in Fresno, California." />
+<meta property="og:url" content="https://austinreunion.com/" />
+<meta property="og:image" content="https://austinreunion.com/images/austin-fam-og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="The Austin family together at a reunion" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Austin Family Reunion" />
+<meta name="twitter:description" content="Our family's reunion home — history, photos, and every gathering. Next up: 2026 in Fresno." />
+<meta name="twitter:image" content="https://austinreunion.com/images/austin-fam-og.png" />
+<link rel="icon" type="image/png" href="assets/tree-logo-dark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+<style>
+  /* ============ HERITAGE EDITORIAL — Austin Family Reunion 2026 ============ */
+  :root{
+    --espresso:#171009;        /* deep roast ground */
+    --espresso-2:#241709;      /* warm lift */
+    --cream:#f6ead8;           /* paper */
+    --cream-2:#efdfc4;         /* aged paper */
+    --clay:#c55317;            /* brand burnt orange */
+    --clay-deep:#9f4214;
+    --amber:#e0772f;
+    --gold:#d9a441;
+    --gold-soft:#f0c79f;
+    --ink:#241609;
+    --ink-soft:#5a4631;
+    --line:#d9c5a4;
+    --line-dark:rgba(246,234,216,.16);
+    --maxw:1280px;
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Hanken Grotesk",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html.lenis,html.lenis body{height:auto}
+  .lenis.lenis-smooth{scroll-behavior:auto!important}
+  body{
+    background:var(--espresso);color:var(--cream);
+    font-family:var(--sans);font-size:18px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--amber)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+  .on-cream a:focus-visible,.on-cream button:focus-visible,.hist a:focus-visible{outline-color:var(--clay-deep)}
+  ::selection{background:var(--clay);color:var(--cream)}
+
+  /* ---- film grain over everything ---- */
+  .grain{position:fixed;inset:-50%;width:200%;height:200%;z-index:90;pointer-events:none;opacity:.055;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* ---- woven heritage stripe (kente-inspired band) ---- */
+  .weave{height:12px;background:
+    repeating-linear-gradient(90deg,
+      var(--clay) 0 56px, var(--gold) 56px 84px, var(--espresso-2) 84px 112px,
+      var(--cream) 112px 124px, var(--clay-deep) 124px 180px, var(--gold) 180px 194px)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    min-height:58px;padding:16px 36px;font-size:17px;font-weight:700;letter-spacing:.04em;
+    background:var(--clay);color:#fff;text-decoration:none;border:2px solid var(--clay);
+    border-radius:999px;cursor:pointer;transition:transform .25s ease,background .25s ease,border-color .25s}
+  .btn:hover{background:var(--clay-deep);border-color:var(--clay-deep);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--cream);border-color:rgba(246,234,216,.55)}
+  .btn.ghost:hover{background:rgba(246,234,216,.12);border-color:var(--cream)}
+  .btn.onlight{color:#fff}
+  .btn .arr{transition:transform .25s ease}
+  .btn:hover .arr{transform:translateX(5px)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  @media(max-width:600px){.wrap{padding:0 20px}}
+
+  /* ================= LOADER ================= */
+  .loader{position:fixed;inset:0;z-index:200;background:var(--espresso);display:flex;align-items:center;justify-content:center;
+    animation:loaderAway .7s ease 2.6s forwards}
+  .loader .l-in{text-align:center}
+  .loader .l-word{font-family:var(--serif);font-weight:600;font-size:clamp(28px,5vw,52px);letter-spacing:.06em;color:var(--cream)}
+  .loader .l-word i{font-style:italic;color:var(--amber)}
+  .loader .l-bar{width:min(260px,60vw);height:2px;background:rgba(246,234,216,.18);margin:18px auto 0;position:relative;overflow:hidden}
+  .loader .l-bar::after{content:"";position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);animation:loadbar 2.2s cubic-bezier(.65,0,.35,1) forwards}
+  @keyframes loadbar{to{transform:translateX(0)}}
+  @keyframes loaderAway{to{opacity:0;visibility:hidden;pointer-events:none}}
+  .loader.done{animation:loaderAway .7s ease forwards}
+
+  /* ================= HEADER ================= */
+  header.site{position:fixed;top:0;left:0;right:0;z-index:80;transition:background .35s ease,box-shadow .35s ease;padding:0}
+  header.site.solid{background:rgba(23,16,9,.94);box-shadow:0 1px 0 var(--line-dark)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream)}
+  .brand img{width:40px;height:40px}
+  .brand b{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.01em;white-space:nowrap}
+  nav.main{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+  nav.main a{text-decoration:none;color:var(--gold-soft);font-weight:600;font-size:15.5px;letter-spacing:.05em;
+    padding:10px 13px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center;transition:color .2s}
+  nav.main a:hover{color:#fff}
+  nav.main a.rsvp{background:var(--clay);color:#fff;border-radius:999px;padding:10px 22px}
+  nav.main a.rsvp:hover{background:var(--clay-deep)}
+  nav.main a.fb{padding:8px 10px}
+  nav.main a.fb svg{width:22px;height:22px;fill:currentColor;display:block}
+  @media(max-width:880px){
+    nav.main a:not(.rsvp):not(.fb){display:none}
+    .brand b{font-size:17px}
+  }
+  @media(max-width:480px){
+    .nav-in{padding:12px 16px;flex-wrap:nowrap}
+    .brand{gap:9px}
+    .brand img{width:32px;height:32px}
+    .brand b{font-size:14.5px;letter-spacing:0}
+    nav.main{flex-wrap:nowrap}
+    nav.main a.rsvp{padding:8px 16px;font-size:14px}
+    nav.main a.fb{padding:6px}
+    nav.main a.fb svg{width:20px;height:20px}
+  }
+  @media(max-width:374px){
+    .nav-in{padding:12px 10px;gap:8px}
+    .brand{gap:7px}
+    .brand b{font-size:13px}
+    nav.main a.rsvp{padding:8px 12px;font-size:13px}
+  }
+
+  /* ================= HERO ================= */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;
+    overflow:hidden;background:#171009 url('assets/austin.png') center/cover no-repeat}
+  .hero-bg{position:absolute;inset:-8% 0;background:url('assets/austin.png') center/cover no-repeat;will-change:transform;z-index:0}
+  #fireflies{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+  .hero-scrim{position:absolute;inset:0;z-index:1;background:
+      radial-gradient(110% 85% at 50% 60%, rgba(23,16,9,.18), rgba(23,16,9,.86) 86%),
+      linear-gradient(0deg, rgba(23,16,9,.92), rgba(23,16,9,.18) 42%, rgba(23,16,9,.55))}
+  .hero-in{position:relative;z-index:3;max-width:1080px;padding:120px 24px 90px}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:14px;font-weight:700;
+    letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
+  .hero .eyebrow::before,.hero .eyebrow::after{content:"";width:44px;height:1px;background:var(--gold)}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(52px,10.5vw,142px);line-height:.96;letter-spacing:-.015em;color:var(--cream)}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--amber)}
+  .hero .where{font-size:clamp(16px,2.2vw,21px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);margin:30px 0 8px}
+  .hero .where b{color:#fff;font-weight:700}
+
+  .count{margin:34px auto;display:flex;gap:0;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+  .count .u{min-width:150px;padding:22px 26px;border-right:1px solid var(--line-dark)}
+  .count .u:first-child{border-left:1px solid var(--line-dark)}
+  .count .u b{font-family:var(--serif);font-weight:400;font-size:clamp(42px,6.5vw,76px);line-height:1;display:block;color:var(--cream);font-variant-numeric:tabular-nums}
+  .count .u span{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:8px;display:block}
+  @media(max-width:660px){
+    .count{border:1px solid var(--line-dark)}
+    .count .u{min-width:50%;width:50%;padding:16px 10px;border:none!important}
+    .count .u:nth-child(1),.count .u:nth-child(2){border-bottom:1px solid var(--line-dark)!important}
+    .count .u:nth-child(odd){border-right:1px solid var(--line-dark)!important}
+  }
+  .hero .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+  .hero .cta-row .btn{min-width:230px}
+  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;color:var(--gold-soft);
+    font-size:11px;letter-spacing:.4em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll-hint::after{content:"";width:1px;height:42px;background:linear-gradient(var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  .edge{position:absolute;z-index:3;top:50%;font-size:11px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:rgba(246,234,216,.5);white-space:nowrap}
+  .edge.l{left:26px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl}
+  .edge.r{right:26px;transform:translateY(-50%);writing-mode:vertical-rl}
+  @media(max-width:900px){.edge{display:none}}
+  @media(max-height:999px){.scroll-hint{display:none}}
+  @media(max-width:480px){
+    .hero .eyebrow{font-size:11.5px;letter-spacing:.22em}
+    .hero .eyebrow::before,.hero .eyebrow::after{width:20px}
+  }
+
+  /* ================= MARQUEE ================= */
+  .marquee{background:var(--clay);color:var(--espresso);overflow:hidden;padding:18px 0;position:relative}
+  .marquee .mq-track{display:flex;width:max-content;animation:mq 56s linear infinite}
+  .marquee:hover .mq-track{animation-play-state:paused}
+  .marquee .mq-chunk{display:flex;align-items:center;gap:34px;padding-right:34px}
+  .marquee span{font-family:var(--serif);font-size:clamp(20px,2.6vw,30px);font-weight:600;letter-spacing:.02em;white-space:nowrap}
+  .marquee i{font-style:normal;color:var(--cream);font-size:18px}
+  @keyframes mq{to{transform:translateX(-50%)}}
+
+  /* ================= SECTIONS (shared) ================= */
+  section.block{padding:clamp(80px,11vw,150px) 0;position:relative}
+  .on-cream{background:var(--cream);color:var(--ink)}
+  .on-cream ::selection{background:var(--espresso);color:var(--cream)}
+  .sec-tag{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(30px,5vw,56px)}
+  .sec-tag .no{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(17px,2vw,21px);color:var(--clay-deep)}
+  .on-dark .sec-tag .no{color:var(--gold)}
+  .sec-tag .nm{font-size:13px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:inherit;opacity:.65}
+  .sec-tag::after{content:"";flex:1;height:1px;background:currentColor;opacity:.18;transform:translateY(-4px)}
+  h2.disp{font-family:var(--serif);font-weight:500;font-size:clamp(40px,6.4vw,84px);line-height:1.02;letter-spacing:-.015em;margin-bottom:18px}
+  h2.disp em{font-style:italic;font-weight:400;color:var(--clay)}
+  .on-dark h2.disp em{color:var(--amber)}
+  .lede{font-size:clamp(18px,2.1vw,21px);max-width:58ch;color:var(--ink-soft)}
+  .on-dark .lede{color:var(--gold-soft)}
+
+  /* ================= GREETINGS ================= */
+  .greet-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:center}
+  @media(max-width:840px){.greet-grid{grid-template-columns:1fr}}
+  .greet-copy p{font-size:clamp(18px,2.1vw,21px);color:var(--ink-soft);margin-bottom:22px;max-width:56ch}
+  .greet-copy p strong{color:var(--ink)}
+  .pull{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(24px,3.2vw,34px);line-height:1.3;color:var(--ink);
+    border-left:4px solid var(--clay);padding-left:24px;margin:34px 0}
+  .photo-frame{position:relative}
+  .photo-frame img{width:100%;border-radius:4px;filter:saturate(.96) contrast(1.03)}
+  .photo-frame::before{content:"";position:absolute;inset:14px;border:1px solid rgba(246,234,216,.85);border-radius:2px;pointer-events:none;mix-blend-mode:overlay}
+  .photo-frame .ticket{position:absolute;left:-14px;bottom:22px;background:var(--espresso);color:var(--cream);
+    font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding:12px 18px;border-radius:2px}
+  .frame-shadow{box-shadow:0 30px 80px rgba(36,22,9,.35)}
+
+  /* ================= WEEKEND ================= */
+  .on-dark{background:var(--espresso);color:var(--cream)}
+  .days{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+  @media(max-width:920px){.days{grid-template-columns:1fr;max-width:640px}}
+  .day-card{position:relative;background:var(--espresso-2);border:1px solid var(--line-dark);border-radius:14px;
+    padding:34px 28px 30px;display:flex;flex-direction:column;gap:14px;overflow:hidden;transition:transform .3s ease,border-color .3s ease}
+  .day-card:hover{transform:translateY(-6px);border-color:rgba(217,164,65,.55)}
+  .day-card .dnum{font-family:var(--serif);font-weight:300;font-size:clamp(64px,7vw,92px);line-height:1;color:transparent;
+    -webkit-text-stroke:1px rgba(217,164,65,.65);position:absolute;top:18px;right:20px}
+  .day-card .dwhen{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .day-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,34px);line-height:1.12;max-width:13ch;color:var(--cream)}
+  .day-card p{font-size:16.5px;color:var(--gold-soft);line-height:1.6}
+  .day-card ul{list-style:none;margin-top:4px}
+  .day-card li{font-size:15.5px;color:var(--cream);padding:6px 0 6px 24px;position:relative}
+  .day-card li::before{content:"✦";color:var(--gold);position:absolute;left:0;top:6px;font-size:12px}
+  .day-card .dfoot{margin-top:auto;padding-top:14px;border-top:1px dashed rgba(246,234,216,.25);font-size:14px;color:var(--gold-soft);letter-spacing:.04em}
+  .days-cta{margin-top:38px;text-align:center}
+  .link-und{color:var(--gold);font-weight:700;text-decoration:none;border-bottom:2px solid var(--clay);padding-bottom:3px;font-size:17px;letter-spacing:.03em}
+  .link-und:hover{color:var(--cream)}
+  .on-cream .link-und{color:var(--clay-deep)}
+  .on-cream .link-und:hover{color:var(--ink)}
+
+  /* ================= PRICING ================= */
+  .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  @media(max-width:980px){.price-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.price-grid{grid-template-columns:1fr}}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 24px 26px;text-align:left;position:relative;overflow:hidden;
+    transition:transform .3s ease,box-shadow .3s ease}
+  .pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:
+    repeating-linear-gradient(90deg,var(--clay) 0 28px,var(--gold) 28px 42px,var(--espresso) 42px 56px,var(--clay-deep) 56px 84px);
+    opacity:0;transition:opacity .3s}
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(36,22,9,.16)}
+  .pcard:hover::before{opacity:1}
+  .pcard .tier{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--clay-deep)}
+  .pcard .ages{font-size:14px;color:var(--ink-soft);margin-top:2px}
+  .pcard .amt{font-family:var(--serif);font-weight:500;font-size:clamp(52px,5.5vw,72px);line-height:1;margin:18px 0 10px;color:var(--ink)}
+  .pcard .amt sup{font-size:.42em;vertical-align:.7em;color:var(--clay);font-weight:400}
+  .pcard .note{font-size:15px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:12px}
+  .deadline{margin-top:34px;background:var(--espresso);color:var(--cream);border-radius:14px;padding:24px 28px;
+    display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  .deadline .dl-big{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,24px)}
+  .deadline .dl-big b{color:var(--gold);font-style:normal;font-weight:600}
+  .deadline .dl-sub{font-size:15px;color:var(--gold-soft)}
+
+  /* ================= HISTORY (horizontal) ================= */
+  .hist{overflow:hidden}
+  .hist-head{margin-bottom:clamp(26px,4vw,44px)}
+  .hist-track{display:flex;gap:clamp(18px,3vw,34px);will-change:transform;padding:10px 28px 26px;
+    overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--clay) transparent}
+  .hist-panel{flex:0 0 auto;width:min(72vw,760px);position:relative;background:#fff;border-radius:6px}
+  .hist-panel .ph{position:relative;padding:14px 14px 0}
+  .hist-panel img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;filter:saturate(.95) contrast(1.02)}
+  .hist-panel .cap{display:flex;align-items:baseline;justify-content:space-between;padding:14px 18px 16px;color:var(--ink)}
+  .hist-panel .cap .yr{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,36px)}
+  .hist-panel .cap .city{font-size:13px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--clay-deep)}
+  .hist-panel.coming{background:var(--cream-2);outline:2px dashed var(--clay);outline-offset:-10px}
+  .hist-panel.coming .comm-in{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px}
+  .hist-panel.coming .comm-in .big{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.4vw,38px);color:var(--ink);max-width:18ch;line-height:1.25}
+  .hist-panel.coming .comm-in .sm{font-size:15px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--clay-deep)}
+  .hist-note{padding:0 28px;margin-top:8px;font-size:16.5px;color:var(--ink-soft);max-width:var(--maxw);margin-left:auto;margin-right:auto}
+  .hist-note a{color:var(--clay-deep);font-weight:700}
+  @media(max-width:899px){
+    .hist-panel{scroll-snap-align:center;width:84vw}
+  }
+  /* desktop: the pinned section must fit one viewport — photos sized from height.
+     section.block.hist needed so this beats section.block's padding (specificity). */
+  @media(min-width:900px){
+    section.block.hist{--ph-h:clamp(180px,calc(100svh - 520px),520px);height:100svh;padding:88px 0 24px;
+      display:flex;flex-direction:column;justify-content:flex-start}
+    .hist .wrap.hist-head{width:100%;margin-bottom:14px}
+    .hist .sec-tag{margin-bottom:20px}
+    .hist h2.disp{font-size:clamp(34px,4.6vw,60px);margin-bottom:8px}
+    .hist .lede{font-size:18px}
+    .hist-panel{width:min(52vw,720px)}
+    .hist-panel img{height:var(--ph-h);width:100%;object-fit:cover;aspect-ratio:auto}
+    .hist-panel.coming .comm-in{height:var(--ph-h);width:100%;aspect-ratio:auto}
+    .hist-track{padding-bottom:14px}
+    .hist-note{width:100%;margin-top:4px}
+  }
+
+  /* ================= COMMITTEE ================= */
+  .people{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,34px);margin-top:8px}
+  @media(max-width:880px){.people{grid-template-columns:repeat(2,1fr)}}
+  .person{text-align:center}
+  .arch{width:100%;aspect-ratio:4/5;border-radius:999px 999px 14px 14px;overflow:hidden;position:relative;
+    background:var(--cream-2);border:1px solid var(--line);transition:transform .35s ease}
+  .person:hover .arch{transform:translateY(-6px)}
+  .arch img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02);transition:transform .6s ease}
+  .person:hover .arch img{transform:scale(1.045)}
+  .arch.init{display:flex;align-items:center;justify-content:center;background:var(--espresso)}
+  .arch.init span{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);color:var(--gold)}
+  .person:nth-child(even) .arch.init{background:var(--clay-deep)}
+  .person .nm{font-weight:700;font-size:16.5px;line-height:1.3;margin-top:14px;color:var(--ink)}
+  .person .rl{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+
+  /* ================= FACE STRIP PARALLAX ================= */
+  .strip{position:relative;height:clamp(300px,46vw,460px);overflow:hidden}
+  .strip img{position:absolute;left:0;top:0;width:100%;height:134%;object-fit:cover;object-position:top center;will-change:transform}
+  .strip .ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(23,16,9,.72),rgba(23,16,9,.38));display:flex;align-items:center;justify-content:center;text-align:center;padding:0 22px}
+  .strip .ov p{color:var(--cream);font-family:var(--serif);font-weight:500;font-size:clamp(26px,4.4vw,52px);line-height:1.15;max-width:22ch}
+  .strip .ov p em{font-style:italic;color:var(--gold)}
+
+  /* ================= STAY ================= */
+  .stay-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:8px}
+  @media(max-width:880px){.stay-grid{grid-template-columns:1fr}}
+  .hotel{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .hotel .him{aspect-ratio:16/8.5;overflow:hidden}
+  .hotel .him img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .hotel:hover .him img{transform:scale(1.04)}
+  .hotel .hb{padding:30px 28px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .hotel .htag{font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--clay-deep)}
+  .hotel h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.8vw,32px);color:var(--ink)}
+  .hotel p{font-size:16.5px;color:var(--ink-soft)}
+  .hotel ul{list-style:none;margin:2px 0 6px}
+  .hotel li{font-size:15.5px;color:var(--ink);padding:5px 0 5px 24px;position:relative}
+  .hotel li::before{content:"✦";color:var(--clay);position:absolute;left:0;top:5px;font-size:12px}
+  .hotel .btn{align-self:flex-start;margin-top:auto}
+  .hotel.soon{background:var(--cream-2);border-style:dashed;border-color:var(--clay);justify-content:center;padding:30px 28px}
+  .hotel.soon .soon-pill{display:inline-block;background:var(--espresso);color:var(--gold);font-size:12px;font-weight:800;
+    letter-spacing:.26em;text-transform:uppercase;border-radius:999px;padding:9px 18px;margin-bottom:14px;align-self:flex-start}
+
+  /* ================= FINAL CTA ================= */
+  .final{position:relative;background:var(--espresso);text-align:center;overflow:hidden}
+  .final .big-line{font-family:var(--serif);font-weight:500;font-size:clamp(54px,11vw,150px);line-height:.98;letter-spacing:-.015em;color:var(--cream)}
+  .final .big-line em{font-style:italic;font-weight:400;color:var(--amber)}
+  .final p.sub2{font-size:clamp(17px,2.2vw,21px);color:var(--gold-soft);max-width:46ch;margin:26px auto 38px}
+  .final .ring{position:absolute;border:1px solid rgba(217,164,65,.22);border-radius:50%;pointer-events:none}
+  .final .r1{width:560px;height:560px;left:-180px;top:-180px}
+  .final .r2{width:740px;height:740px;right:-260px;bottom:-300px}
+  .final .dl-line{margin-top:26px;font-size:14px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+
+  /* ================= FOOTER ================= */
+  footer{background:#100a05;color:var(--gold-soft);padding:60px 0 46px;text-align:center;border-top:1px solid var(--line-dark)}
+  footer img{width:54px;height:54px;margin:0 auto 16px}
+  footer .fn{font-family:var(--serif);font-size:26px;font-weight:500;color:var(--cream)}
+  footer .fd{font-size:16px;margin-top:8px}
+  footer a{color:var(--gold)}
+  footer .fsoc{margin-top:18px;display:flex;justify-content:center}
+  footer .fsoc a{display:inline-flex;padding:10px;color:var(--gold-soft)}
+  footer .fsoc svg{width:24px;height:24px;fill:currentColor}
+
+  /* ================= PRINT ================= */
+  @media print{
+    .loader,.grain,#fireflies,.marquee,.weave,.scroll-hint,.edge,.strip,.final .ring,header.site,.btn{display:none!important}
+    body,.on-dark,.hero,.final,footer,.deadline,.day-card{background:#fff!important;color:#111!important}
+    .hero{min-height:auto}
+    .hero h1,.hero .where,.count .u b,.final .big-line,footer .fn,.day-card h3,.day-card li,h2.disp{color:#111!important}
+    .hero h1 em,.final .big-line em,h2.disp em{color:var(--clay-deep)!important}
+    .day-card{border-color:#999}
+    .day-card p,.day-card .dwhen,.day-card .dfoot,.count .u span,.lede,footer .fd,.final p.sub2{color:#333!important}
+    .deadline .dl-big,.deadline .dl-big b,.deadline .dl-sub{color:#111!important}
+    a{color:#111!important}
+  }
+
+  /* ================= REDUCED MOTION ================= */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+    .marquee .mq-track{animation:none;transform:none}
+    .scroll-hint::after{animation:none}
+    .loader{display:none}
+  }
+</style>
+<noscript><style>header.site{background:rgba(23,16,9,.94)}</style></noscript>
+</head>
+<body>
+
+<!-- loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="l-in">
+    <div class="l-word">Austin <i>Family</i> Reunion</div>
+    <div class="l-bar"></div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site" id="siteHead">
+  <div class="nav-in">
+    <a class="brand" href="#top"><img src="assets/tree-logo-dark.png" alt="Austin family tree crest" /><b>Austin Family Reunion</b></a>
+    <nav class="main" aria-label="Main">
+      <a href="#weekend">Weekend</a>
+      <a href="#register-info">Pricing</a>
+      <a href="#history">History</a>
+      <a href="register.html">Reunion Info</a>
+      <a class="fb" href="https://www.facebook.com/groups/248323684164389" target="_blank" rel="noopener" aria-label="Austin Family Reunion Facebook group" title="Facebook group"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/></svg></a>
+      <a href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener" class="rsvp">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <canvas id="fireflies" aria-hidden="true"></canvas>
+    <div class="edge l" aria-hidden="true">Las Vegas ’22 · Houston ’24 · Fresno ’26</div>
+    <div class="edge r" aria-hidden="true">The Austin Family · Est. Generations Deep</div>
+    <div class="hero-in">
+      <span class="eyebrow">The 2026 Family Reunion</span>
+      <h1 id="heroTitle">
+        <span class="ln">Stronger <em>Roots.</em></span>
+        <span class="ln">Stronger <em>Family.</em></span>
+      </h1>
+      <p class="where"><b>Fresno, California</b> &nbsp;·&nbsp; October 9–11, 2026</p>
+      <div class="count" id="count" role="group" aria-label="Countdown to the reunion">
+        <div class="u"><b data-d>00</b><span>Days</span></div>
+        <div class="u"><b data-h>00</b><span>Hours</span></div>
+        <div class="u"><b data-m>00</b><span>Minutes</span></div>
+        <div class="u"><b data-s>00</b><span>Seconds</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener">Register Today <span class="arr">→</span></a>
+        <a class="btn ghost" href="register.html#schedule">See the Weekend</a>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="weave" aria-hidden="true"></div>
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <div class="mq-chunk">
+        <span>Fresno 2026</span><i>✦</i><span>One Family</span><i>✦</i><span>Three Days</span><i>✦</i>
+        <span>Stronger Roots</span><i>✦</i><span>Stronger Family</span><i>✦</i><span>October 9–11</span><i>✦</i>
+      </div>
+      <div class="mq-chunk">
+        <span>Fresno 2026</span><i>✦</i><span>One Family</span><i>✦</i><span>Three Days</span><i>✦</i>
+        <span>Stronger Roots</span><i>✦</i><span>Stronger Family</span><i>✦</i><span>October 9–11</span><i>✦</i>
+      </div>
+      <div class="mq-chunk">
+        <span>Fresno 2026</span><i>✦</i><span>One Family</span><i>✦</i><span>Three Days</span><i>✦</i>
+        <span>Stronger Roots</span><i>✦</i><span>Stronger Family</span><i>✦</i><span>October 9–11</span><i>✦</i>
+      </div>
+      <div class="mq-chunk">
+        <span>Fresno 2026</span><i>✦</i><span>One Family</span><i>✦</i><span>Three Days</span><i>✦</i>
+        <span>Stronger Roots</span><i>✦</i><span>Stronger Family</span><i>✦</i><span>October 9–11</span><i>✦</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GREETINGS ============ -->
+  <section class="block on-cream" id="greetings">
+    <div class="wrap">
+      <div class="sec-tag" data-reveal><span class="no">No. 01</span><span class="nm">Greetings</span></div>
+      <div class="greet-grid">
+        <div class="greet-copy">
+          <h2 class="disp" data-reveal>Welcome home, <em>family.</em></h2>
+          <p data-reveal>We are so glad you’re here. After <strong>Houston in 2024</strong>, the Austin family gathers again in 2026 — this time in <strong>Fresno, California</strong>. This page has everything you need: how to register, the weekend schedule, where to stay, and a look back at the reunions that built us.</p>
+          <div class="pull" data-reveal>“Celebrating our past. Building our future — together.”</div>
+          <p data-reveal>We can’t wait to see you.</p>
+          <a class="btn onlight" data-reveal href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener">Register Today <span class="arr">→</span></a>
+        </div>
+        <div class="photo-frame frame-shadow" data-reveal>
+          <img src="assets/fresno-mural.png" width="1999" height="1155" style="height:auto" alt="Fresno, California — host city of the Austin Family Reunion 2026" loading="lazy" />
+          <div class="ticket">Fresno · CA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WEEKEND ============ -->
+  <section class="block on-dark" id="weekend">
+    <div class="wrap">
+      <div class="sec-tag" data-reveal><span class="no">No. 02</span><span class="nm">The Weekend</span></div>
+      <h2 class="disp" data-reveal>Three days. <em>One family.</em></h2>
+      <p class="lede" data-reveal>Here’s the plan for the weekend in Fresno.</p>
+      <div class="days">
+        <article class="day-card" data-reveal>
+          <div class="dnum" aria-hidden="true">09</div>
+          <div class="dwhen">Fri · Oct 9 · Evening</div>
+          <h3>Family Meet &amp; Greet</h3>
+          <p>Join us Friday evening to kick off the weekend. We’re finalizing details and have a few exciting options to be announced as we get closer to the event.</p>
+          <div class="dfoot">The reunion begins ✦</div>
+        </article>
+        <article class="day-card" data-reveal>
+          <div class="dnum" aria-hidden="true">10</div>
+          <div class="dwhen">Sat · Oct 10 · All Day</div>
+          <h3>Family Fun Day at Blackbeard’s</h3>
+          <p>An afternoon of food, games and activities for all ages at Blackbeard’s Family Entertainment Center. Catered lunch included with registration; kids 12 &amp; under get a ride wristband (extras for 13+ are $26).</p>
+          <ul>
+            <li>Family group photos</li>
+            <li>Games for kids, teens &amp; adults</li>
+            <li>Music and dancing</li>
+            <li>Vote: the 2028 reunion city</li>
+          </ul>
+          <div class="dfoot">Lunch &amp; kids’ wristband included ✦</div>
+        </article>
+        <article class="day-card" data-reveal>
+          <div class="dnum" aria-hidden="true">11</div>
+          <div class="dwhen">Sun · Oct 11 · Morning</div>
+          <h3>Madera Cemetery Visit</h3>
+          <p>We close the weekend at Madera Cemetery, paying tribute to our ancestors and placing flowers on grave sites — then a final excursion before heading home. Charter bus included, or drive yourself.</p>
+          <div class="dfoot">Honoring those who came before ✦</div>
+        </article>
+      </div>
+      <div class="days-cta" data-reveal><a class="link-und" href="register.html#schedule">Full weekend details →</a></div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <div class="weave" aria-hidden="true"></div>
+  <section class="block on-cream" id="register-info">
+    <div class="wrap">
+      <div class="sec-tag" data-reveal><span class="no">No. 03</span><span class="nm">Registration</span></div>
+      <h2 class="disp" data-reveal>Save your <em>seat at the table.</em></h2>
+      <p class="lede" data-reveal>Registration covers the weekend’s events and Saturday’s catered lunch.</p>
+      <div class="price-grid">
+        <div class="pcard" data-reveal>
+          <div class="tier">Children</div><div class="ages">Ages 4–12</div>
+          <div class="amt"><sup>$</sup>50</div>
+          <div class="note">Includes a ride wristband.</div>
+        </div>
+        <div class="pcard" data-reveal>
+          <div class="tier">Teens</div><div class="ages">Ages 13–17</div>
+          <div class="amt"><sup>$</sup>80</div>
+          <div class="note">Full weekend access.</div>
+        </div>
+        <div class="pcard" data-reveal>
+          <div class="tier">Adults</div><div class="ages">Ages 18–64</div>
+          <div class="amt"><sup>$</sup>150</div>
+          <div class="note">Full weekend access.</div>
+        </div>
+        <div class="pcard" data-reveal>
+          <div class="tier">Seniors</div><div class="ages">65 &amp; up</div>
+          <div class="amt"><sup>$</sup>110</div>
+          <div class="note">Our honored elders.</div>
+        </div>
+      </div>
+      <div class="deadline" data-reveal>
+        <div>
+          <div class="dl-big">Register &amp; pay in full by <b>August 15, 2026</b></div>
+          <div class="dl-sub">Children 3 &amp; under attend free.</div>
+        </div>
+        <a class="btn" href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener">Register Today <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HISTORY ============ -->
+  <section class="block on-cream hist" id="history" style="background:var(--cream-2)">
+    <div class="wrap hist-head">
+      <div class="sec-tag" data-reveal><span class="no">No. 04</span><span class="nm">Through the Years</span></div>
+      <h2 class="disp" data-reveal>Reunions that <em>built us.</em></h2>
+      <p class="lede" data-reveal>Our family has gathered for generations. Here’s where we’ve been — and where we're going.</p>
+    </div>
+    <div class="hist-wrap" id="histWrap">
+      <div class="hist-track" id="histTrack">
+        <figure class="hist-panel frame-shadow" data-reveal>
+          <div class="ph">
+            <img src="images/2022-web.jpg" alt="The Austin family at the 2022 reunion in Las Vegas" loading="lazy" />
+          </div>
+          <figcaption class="cap"><span class="yr">2022</span><span class="city">Las Vegas, NV</span></figcaption>
+        </figure>
+        <figure class="hist-panel frame-shadow" data-reveal>
+          <div class="ph">
+            <img src="images/2024.jpg" alt="The Austin family at the 2024 reunion in Houston" loading="lazy" />
+          </div>
+          <figcaption class="cap"><span class="yr">2024</span><span class="city">Houston, TX</span></figcaption>
+        </figure>
+        <figure class="hist-panel coming" data-reveal>
+          <div class="ph">
+            <div class="comm-in">
+              <div class="sm">Fresno · 2026</div>
+              <div class="big">This photo doesn’t exist yet. <br/>Be in it.</div>
+              <a class="link-und" href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener">Register →</a>
+            </div>
+          </div>
+          <figcaption class="cap"><span class="yr">2026</span><span class="city">Fresno, CA</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="hist-note" data-reveal>Have photos to share? Email them to <a href="mailto:austinreunion6@gmail.com">austinreunion6@gmail.com</a> and we’ll add them to the album.</p>
+  </section>
+
+  <!-- ============ COMMITTEE ============ -->
+  <section class="block on-cream" id="committee">
+    <div class="wrap">
+      <div class="sec-tag" data-reveal><span class="no">No. 05</span><span class="nm">The Committee</span></div>
+      <h2 class="disp" data-reveal>The hands that <em>bring us together.</em></h2>
+      <p class="lede" data-reveal>The family members working hard to gather us all. Thank you.</p>
+      <div class="people" style="margin-top:clamp(26px,4vw,46px)">
+        <div class="person" data-reveal><div class="arch"><img src="images/Darrell.png" alt="Darrell Newsome" loading="lazy" /></div><div class="nm">Darrell Newsome</div><div class="rl">Committee</div></div>
+        <div class="person" data-reveal><div class="arch init"><span>YL</span></div><div class="nm">Yvonne Sherii Lee-Long</div><div class="rl">Committee</div></div>
+        <div class="person" data-reveal><div class="arch"><img src="images/Leshea.png" alt="Leshea Tarver" loading="lazy" /></div><div class="nm">Leshea Tarver</div><div class="rl">Committee</div></div>
+        <div class="person" data-reveal><div class="arch init"><span>KW</span></div><div class="nm">Kamilah White</div><div class="rl">Committee</div></div>
+        <div class="person" data-reveal><div class="arch"><img src="images/Lamarr.png" alt="Lamarr Norris" loading="lazy" /></div><div class="nm">Lamarr Norris</div><div class="rl">Committee</div></div>
+        <div class="person" data-reveal><div class="arch"><img src="images/Bianca.png" alt="Bianca Jenkins" loading="lazy" /></div><div class="nm">Bianca Jenkins</div><div class="rl">Committee</div></div>
+        <div class="person" data-reveal><div class="arch"><img src="images/Connie.png" alt="Connie Breazell" loading="lazy" /></div><div class="nm">Connie Breazell</div><div class="rl">Committee</div></div>
+        <div class="person" data-reveal><div class="arch init"><span>LH</span></div><div class="nm">La Shan Harris</div><div class="rl">Committee</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FACE STRIP ============ -->
+  <div class="weave" aria-hidden="true"></div>
+  <section class="strip" aria-label="The Austin family">
+    <img id="stripImg" src="images/austin-fam-strip.jpg" alt="" loading="lazy" />
+    <div class="ov"><p data-reveal>One family. Many branches. <em>Same roots.</em></p></div>
+  </section>
+
+  <!-- ============ STAY ============ -->
+  <section class="block on-cream" id="stay">
+    <div class="wrap">
+      <div class="sec-tag" data-reveal><span class="no">No. 06</span><span class="nm">Where to Stay</span></div>
+      <h2 class="disp" data-reveal>Stay <em>close.</em></h2>
+      <p class="lede" data-reveal>We’ve arranged group room blocks at two adjacent hotels so the family can stay close together.</p>
+      <div class="stay-grid" style="margin-top:clamp(26px,4vw,46px)">
+        <article class="hotel" data-reveal>
+          <div class="him"><img src="assets/hilton-fresno.jpg" alt="Hilton Garden Inn, Fresno, California" loading="lazy" /></div>
+          <div class="hb">
+            <div class="htag">Room Block · Open</div>
+            <h3>Hilton Garden Inn — Fresno</h3>
+            <p>Book within the <strong>Austin Family Reunion</strong> room block for our group rate, or call the hotel and mention the Austin Family Reunion.</p>
+            <ul>
+              <li>Group rate — Austin Family Reunion block</li>
+              <li>Close to the weekend’s activities</li>
+              <li>Reserve early — the block is limited</li>
+            </ul>
+            <a class="btn" href="https://group.hiltongardeninn.com/fyitn6" target="_blank" rel="noopener">Reserve Your Room <span class="arr">→</span></a>
+          </div>
+        </article>
+        <article class="hotel soon" data-reveal>
+          <div class="hb" style="padding:0">
+            <span class="soon-pill">Coming Soon</span>
+            <h3>Marriott — Fresno</h3>
+            <p>Right next to the Hilton Garden Inn, with a second room block reserved for the family — a great option if the Hilton block fills up.</p>
+            <p><strong>Booking details coming soon</strong> — we’ll post the group rate and reservation link here shortly.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="block final" id="register">
+    <div class="ring r1" aria-hidden="true"></div>
+    <div class="ring r2" aria-hidden="true"></div>
+    <div class="wrap">
+      <h2 class="big-line" data-reveal>Ready to <em>come home?</em></h2>
+      <p class="sub2" data-reveal>Register your whole party in one place. We can’t wait to see the whole family in Fresno.</p>
+      <div data-reveal><a class="btn" href="https://forms.gle/RDdt1tTXfw2FbaG8A" target="_blank" rel="noopener">Register for the Reunion <span class="arr">→</span></a></div>
+      <div class="dl-line" data-reveal>Register &amp; pay in full by August 15, 2026</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/tree-logo-dark.png" alt="Austin family tree crest" />
+    <div class="fn">Austin Family Reunion</div>
+    <div class="fd">Fresno, California · October 9–11, 2026</div>
+    <div class="fd">Questions? <a href="mailto:austinreunion6@gmail.com">austinreunion6@gmail.com</a></div>
+    <div class="fsoc"><a href="https://www.facebook.com/groups/248323684164389" target="_blank" rel="noopener" aria-label="Austin Family Reunion Facebook group"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/></svg></a></div>
+  </div>
+</footer>
+
+<!-- ===== Realtime countdown (1s tick) ===== -->
+<script>
+  (function(){
+    var target = new Date("2026-10-09T17:00:00-07:00").getTime();
+    var elD=document.querySelector("[data-d]"),elH=document.querySelector("[data-h]"),
+        elM=document.querySelector("[data-m]"),elS=document.querySelector("[data-s]");
+    var timer=null, done=false;
+    function pad(n){return String(n).padStart(2,"0");}
+    function tick(){
+      var gap=target-Date.now();
+      if(gap<0){
+        if(done) return;
+        done=true;
+        if(timer) clearInterval(timer);
+        var box=document.getElementById("count");
+        box.textContent="";
+        var u=document.createElement("div"); u.className="u"; u.style.minWidth="auto"; u.style.width="auto";
+        var b=document.createElement("b"); b.style.fontSize="30px"; b.textContent="The family has gathered. Welcome home.";
+        u.appendChild(b); box.appendChild(u);
+        return;
+      }
+      elD.textContent=Math.floor(gap/864e5);
+      elH.textContent=pad(Math.floor(gap%864e5/36e5));
+      elM.textContent=pad(Math.floor(gap%36e5/6e4));
+      elS.textContent=pad(Math.floor(gap%6e4/1e3));
+    }
+    tick(); if(!done) timer=setInterval(tick,1000);
+  })();
+</script>
+
+<!-- ===== Motion stack: GSAP + Lenis + Three.js fireflies ===== -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" integrity="sha384-FKTX0CNJ8ngN1oGMBReVu7mvjTJyjFiD5etb1NKnYxc+8eFI2O0KWnksTN+oTFcu" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js" integrity="sha384-qOkzR5Ke/XkQxuGVJ9hpFEpDlcoLtWwVYhnJf06cLIZa2vaIptSqaubivErzmD5O" crossorigin="anonymous"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var loader = document.getElementById('loader');
+
+  /* Loader: JS removes it as soon as we're ready (CSS keyframe is the no-JS safety net).
+     The hero intro waits on loaderDone so the choreography never plays hidden behind it. */
+  var loaderDone = false;
+  function dropLoader(){
+    if(loader && !loader.classList.contains('done')) loader.classList.add('done');
+    loaderDone = true;
+    if(typeof runIntroOnce === 'function') runIntroOnce();
+  }
+  window.addEventListener('load', function(){ setTimeout(dropLoader, 250); });
+  setTimeout(dropLoader, 2400); /* never hold the page hostage */
+
+  /* Header solid state — works with or without GSAP */
+  var head = document.getElementById('siteHead');
+  function headState(){ if(head) head.classList.toggle('solid', (window.scrollY||0) > 40); }
+  window.addEventListener('scroll', headState, {passive:true});
+  headState();
+
+  if(reduce || !window.gsap){ return; } /* static page stays fully readable */
+
+  /* ScrollTrigger may individually fail to load — everything scroll-driven is gated on hasST */
+  var hasST = typeof ScrollTrigger !== 'undefined';
+  if(hasST) gsap.registerPlugin(ScrollTrigger);
+
+  /* ---- Lenis smooth scroll, driven by GSAP ticker ---- */
+  var lenis = null;
+  if(window.Lenis){
+    lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+    if(hasST) lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  /* ---- Hero intro (waits for webfonts so SplitText measures real glyphs) ---- */
+  function heroIntro(){
+    var introTl = gsap.timeline({delay: .15});
+    if(window.SplitText){
+      var split = new SplitText('#heroTitle .ln', {type:'chars'});
+      introTl.from(split.chars, {yPercent:115, opacity:0, duration:1.05, ease:'power4.out', stagger:.022});
+    } else {
+      introTl.from('#heroTitle', {y:50, opacity:0, duration:1, ease:'power3.out'});
+    }
+    introTl.from('.hero .eyebrow', {y:18, opacity:0, duration:.7, ease:'power2.out', clearProps:'transform,opacity'}, '-=.75')
+           .from('.hero .where',   {y:18, opacity:0, duration:.7, ease:'power2.out', clearProps:'transform,opacity'}, '-=.55')
+           .from('.count .u',      {y:26, opacity:0, duration:.7, ease:'power2.out', stagger:.08, clearProps:'transform,opacity'}, '-=.5')
+           .from('.hero .cta-row .btn', {y:20, opacity:0, duration:.6, ease:'power2.out', stagger:.1, clearProps:'transform,opacity'}, '-=.45')
+           .from('.scroll-hint, .edge', {opacity:0, duration:.8, clearProps:'opacity'}, '-=.3');
+  }
+  var introRan = false, fontsReady = !(document.fonts && document.fonts.ready);
+  function runIntroOnce(){
+    if(reduce || !window.gsap) return;
+    if(!introRan && fontsReady && loaderDone){ introRan = true; heroIntro(); }
+  }
+  if(!fontsReady){
+    document.fonts.ready.then(function(){ fontsReady = true; runIntroOnce(); });
+    setTimeout(function(){ fontsReady = true; runIntroOnce(); }, 1500); /* don't wait forever on a slow font CDN */
+  }
+  runIntroOnce(); /* covers the case where the loader already dropped */
+
+  if(hasST){
+    /* ---- Hero bg parallax on scroll (transform-based; iOS-safe) ---- */
+    gsap.to('#heroBg', {
+      yPercent: 14, ease: 'none',
+      scrollTrigger: {trigger:'#hero', start:'top top', end:'bottom top', scrub:true}
+    });
+
+    /* ---- Generic reveals (clearProps so CSS :hover transforms work afterwards) ---- */
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.from(el, {
+        y: 42, opacity: 0, duration: .9, ease: 'power3.out', clearProps: 'transform,opacity',
+        scrollTrigger: {trigger: el, start: 'top 88%', once: true}
+      });
+    });
+
+    /* ---- History: horizontal scrub on desktop.
+       The track's native overflow-x:auto is the no-JS / reduced-motion / no-ST fallback;
+       while the scrub owns it, overflow goes visible so the transform moves the content. ---- */
+    var mm = gsap.matchMedia();
+    mm.add('(min-width: 900px)', function(){
+      var track = document.getElementById('histTrack');
+      var wrapEl = document.getElementById('histWrap');
+      var sec = document.getElementById('history');
+      if(!track || !wrapEl || !sec) return;
+      track.style.overflowX = 'visible';
+      /* browser scroll-on-focus targets the overflow:hidden section and would
+         permanently shear the pinned layout — snap it back */
+      var fixFocusScroll = function(){ if(sec.scrollLeft) sec.scrollLeft = 0; };
+      sec.addEventListener('scroll', fixFocusScroll);
+      var getX = function(){ return -(track.scrollWidth - wrapEl.clientWidth + 56); };
+      var tween = gsap.to(track, {
+        x: getX, ease: 'none',
+        scrollTrigger: {
+          trigger: '#history', start: 'top top', end: function(){ return '+=' + (-getX()); },
+          pin: true, scrub: .6, invalidateOnRefresh: true
+        }
+      });
+      return function(){
+        tween.scrollTrigger && tween.scrollTrigger.kill();
+        track.style.overflowX = '';
+        sec.removeEventListener('scroll', fixFocusScroll);
+      };
+    });
+
+    /* ---- Face strip parallax ---- */
+    gsap.fromTo('#stripImg', {yPercent:-12}, {
+      yPercent: 6, ease: 'none',
+      scrollTrigger: {trigger:'.strip', start:'top bottom', end:'bottom top', scrub:true}
+    });
+
+    /* ---- Final CTA rings drift ---- */
+    gsap.to('.final .r1', {y:-60, scrollTrigger:{trigger:'.final', start:'top bottom', end:'bottom top', scrub:true}});
+    gsap.to('.final .r2', {y:80,  scrollTrigger:{trigger:'.final', start:'top bottom', end:'bottom top', scrub:true}});
+  }
+
+  /* ---- Three.js golden fireflies over the hero ---- */
+  (function(){
+    if(!window.THREE) return;
+    var canvas = document.getElementById('fireflies');
+    if(!canvas) return;
+    try{
+      var renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:false});
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(55, 1, .1, 60);
+      camera.position.z = 14;
+      var hero = canvas.parentElement;
+
+      var COUNT = (window.innerWidth < 700) ? 110 : 260;
+      var pos = new Float32Array(COUNT*3), seed = new Float32Array(COUNT);
+      for(var i=0;i<COUNT;i++){
+        pos[i*3]   = (Math.random()-.5)*30;
+        pos[i*3+1] = (Math.random()-.5)*18;
+        pos[i*3+2] = (Math.random()-.5)*10;
+        seed[i] = Math.random()*Math.PI*2;
+      }
+      var geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+      var sprite = (function(){
+        var c = document.createElement('canvas'); c.width = c.height = 64;
+        var g = c.getContext('2d');
+        var grd = g.createRadialGradient(32,32,0,32,32,32);
+        grd.addColorStop(0,'rgba(255,214,140,1)'); grd.addColorStop(.4,'rgba(240,160,70,.55)'); grd.addColorStop(1,'rgba(240,160,70,0)');
+        g.fillStyle = grd; g.fillRect(0,0,64,64);
+        var t = new THREE.CanvasTexture(c); return t;
+      })();
+      var mat = new THREE.PointsMaterial({size:.28, map:sprite, transparent:true, opacity:.85,
+        depthWrite:false, blending:THREE.AdditiveBlending, sizeAttenuation:true});
+      var pts = new THREE.Points(geo, mat);
+      scene.add(pts);
+
+      function size(){
+        var w = hero.clientWidth, h = hero.clientHeight;
+        renderer.setSize(w,h,false);
+        camera.aspect = w/h; camera.updateProjectionMatrix();
+      }
+      window.addEventListener('resize', size); size();
+
+      var mx=0,my=0,cx=0,cy=0;
+      window.addEventListener('pointermove', function(e){
+        mx = (e.clientX/window.innerWidth - .5); my = (e.clientY/window.innerHeight - .5);
+      });
+
+      var clock = new THREE.Clock(), inView = true;
+      if('IntersectionObserver' in window){
+        new IntersectionObserver(function(en){ inView = en[0].isIntersecting; }).observe(hero);
+      }
+      (function frame(){
+        requestAnimationFrame(frame);
+        if(!inView) return;
+        var dt = Math.min(clock.getDelta(), .05), k = dt*60; /* frame-rate independent drift */
+        var t = clock.getElapsedTime();
+        var p = geo.attributes.position.array;
+        for(var i=0;i<COUNT;i++){
+          p[i*3+1] += (Math.sin(t*.6 + seed[i])*.0035 + .004)*k;
+          p[i*3]   += Math.cos(t*.4 + seed[i])*.0022*k;
+          if(p[i*3+1] > 9){ p[i*3+1] = -9; }
+        }
+        geo.attributes.position.needsUpdate = true;
+        cx += (mx-cx)*.04; cy += (my-cy)*.04;
+        pts.rotation.y = cx*.22; pts.rotation.x = cy*.14;
+        renderer.render(scene,camera);
+      })();
+    }catch(e){ /* fireflies are decorative — fail silent */ }
+  })();
+})();
+</script>
+</body>
+</html>
