@@ -96,21 +96,29 @@
   .promo-cta{display:inline-flex;align-items:center;gap:10px;margin-top:20px;background:var(--burnt);color:#fff;font-weight:700;font-size:19px;padding:15px 32px;border-radius:10px;border:2px solid var(--burnt)}
   .promo-card:hover .promo-cta{background:var(--burnt-dark);border-color:var(--burnt-dark)}
 
-  .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .pcard{background:#fff;border:2px solid var(--line);border-radius:16px;padding:28px 22px;text-align:center}
-  .pcard .tier{font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--burnt);min-height:46px;display:flex;align-items:center;justify-content:center}
+  /* Fluid card grid: auto-fit + minmax lets the browser drop to fewer columns
+     whenever a card would fall below its readable minimum, instead of squeezing
+     four fixed columns until content clips. CSS Grid Level 1, §7.2.2.1
+     (repeat(auto-fit, minmax(...))) — https://www.w3.org/TR/css-grid-1/ */
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;align-items:stretch}
+  .pcard{background:#fff;border:2px solid var(--line);border-radius:16px;padding:28px 22px;text-align:center;display:flex;flex-direction:column;min-width:0;overflow-wrap:break-word}
+  /* min-height (not height) so a tier label that wraps to three lines grows the
+     box rather than overflowing it; flex:0 0 auto keeps it out of the height race. */
+  .pcard .tier{font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--burnt);min-height:46px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
   .pcard .amt{font-family:"Playfair Display",serif;font-weight:700;font-size:50px;line-height:1;margin:6px 0 12px}
   .pcard .amt sup{font-size:22px;top:-.6em;color:var(--ink-soft)}
-  .pcard .note{font-size:16px;color:var(--ink-soft)}
+  .pcard .note{font-size:16px;color:var(--ink-soft);margin-top:auto}
   .pcard.free{background:var(--brown);border-color:var(--brown)}
   .pcard.free .tier{color:#f0b98a}.pcard.free .amt{color:#fff}.pcard.free .note{color:#e6d3bd}
-  @media(max-width:860px){.price-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:480px){.price-grid{grid-template-columns:1fr}}
+  /* auto-fit handles every width; the old fixed 2-col/1-col breakpoints are no
+     longer needed and would override the fluid track sizing. */
 
   .day{background:#fff;border:2px solid var(--line);border-radius:16px;padding:28px;margin-bottom:18px}
   .day .when-tag{font-size:17px;font-weight:700;color:var(--burnt);text-transform:uppercase;letter-spacing:.04em}
   .day h3{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(23px,3.2vw,30px);color:var(--brown);margin:6px 0 12px}
-  .day p{font-size:19px;color:var(--ink-soft);max-width:70ch}
+  /* No measure cap inside the day cards: the card itself is already the column,
+     so a 70ch cap only left a wide empty gutter on the right at desktop widths. */
+  .day p{font-size:19px;color:var(--ink-soft)}
   .day ul{margin:14px 0 0;padding-left:0;list-style:none}
   .day li{font-size:18px;padding:7px 0 7px 28px;position:relative}
   .day li::before{content:"●";color:var(--burnt);position:absolute;left:4px;top:7px;font-size:13px}
