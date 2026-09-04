@@ -1,3 +1,13 @@
+---
+slug: austin-reunion
+scope: personal
+owner: default
+board: austin-reunion
+repo: https://github.com/vyente-ruffin/austin-family-reunion
+status: active
+created: 2026-08-30
+---
+
 # Austin Family Reunion — site handoff & working guide
 
 This README is the **single source of truth for continuing work**. A new session should be able to
@@ -108,3 +118,26 @@ Verify live after push: `curl -sL https://austinreunion.com/ | grep <your marker
 - Live over HTTPS: yes — apex + www + /register.
 - Recent changes shipped: Fresno greeting image; history captions + real 2022/2024 photos + Fresno-2026 coming-soon placeholder (uniform 4:3); committee 4x2 grid (5 real photos + 3 initials); Facebook nav icon; OG/Twitter tags + dedicated 1200×630 `austin-fam-og.png` (fixes head-clipping in link previews); all Register CTAs → Google Form; hero load-flash fix (CSS placeholder) + countdown backdrop-filter removed (flicker); parallax banner top-anchored face strip; features strip height halved; equal-width hero buttons. **April-meeting updates:** new pricing (Children 4–12 $50 / Teens 13–17 $80 / Adults 18–64 $150 / Seniors 65+ $110; 3 & under free as a note under the cards — both `parallax.html` + `register.html`); Aug 15, 2026 register-and-pay deadline line under pricing; Blackbeard's extra wristband price corrected $40→$26; Sunday transport reworded to "charter bus or drive yourself"; second hotel (Marriott — Fresno, "booking details coming soon") added beside Hilton Garden Inn.
 - **Open items:** (1) Enforce-HTTPS flag pending GitHub cert API; (2) 3 committee members still on initials avatars (Yvonne, Kamilah, La Shan) — awaiting photos; (3) `assets/welcome-austin-2026.png` exists but is unused (greeting now uses `fresno-mural.png`); (4) **Marriott booking details** (exact property name + group-rate link/phone) still needed — placeholder card live now; (5) **Google Form** still needs a "Sunday: charter bus or drive yourself?" preference question — that's an external Google Forms edit (form owner), not a site change.
+
+
+## Ledger
+
+APPEND-ONLY. Never edit or delete a past row — the trail is the point.
+
+Add a row **every time** anything happens on this project: a change made, a
+decision taken, context gathered, an investigation's findings, a failed attempt,
+a new constraint, a gotcha. Each row answers **what / why / how**, dated.
+Newest at the bottom.
+
+> Backfilled 2026-09-01 from this README's existing content. Rows before that
+> date are reconstructed from what the README already recorded, not from a
+> contemporaneous log — treat their dates as approximate.
+
+| Date | What | Why | How / Evidence |
+|---|---|---|---|
+| 2026-08-30 | Filed under the standard project layout | Old home-lab folder convention retired | Project reorganisation |
+| 2026-09-01 | Site live over HTTPS on apex, www and /register; April-meeting content shipped | Reunion is Fresno, CA, October 9-11 2026 and registration must be open | New pricing tiers, Aug 15 2026 pay deadline, Blackbeard's wristband corrected $40->$26, Sunday transport reworded, Marriott placeholder card added |
+| 2026-09-01 | Documented the hard-won gotchas rather than re-solving them | Each cost real time: index/parallax drift, CDN cache, OG absolute URLs, three.js hero flicker, backdrop-filter over WebGL | `## Gotchas` section |
+| 2026-09-01 | Open items recorded: HTTPS-enforce flag, 3 committee photos, unused welcome asset, Marriott booking details, Google Form transport question | These block calling the site done and two are external dependencies | `## Current status` |
+| 2026-09-01 | Frontmatter and ledger section added | Project had neither; new standard requires both | Backfill |
+| 2026-09-04 | Fixed register-page card clipping on desktop | Price boxes were locked to 4 rigid columns so they squeezed until content clipped at narrower/zoomed desktop widths; day-card paragraphs had a 70ch cap leaving a large empty right gutter | price-grid -> repeat(auto-fit,minmax(220px,1fr)) per CSS Grid L1 §7.2.2.1; .pcard made a flex column; removed .day p max-width. Verified headless at 12 desktop widths + iPhone 390/430: zero overflow. Commit ea85550, live on austinreunion.com |
